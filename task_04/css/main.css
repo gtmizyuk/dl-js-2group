@@ -1,0 +1,53 @@
+* {
+    font-family: var(--main-font);
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--main-font-color);    
+}
+section, article {
+    font-size: var(--medium-fonts);
+    font-style: italic;    
+    text-align: center;
+    color: var(--main-font-color);
+}
+header, footer, nav, aside {
+    font-size: var(--large-fonts);
+    text-align: center;
+    color: var(--main-color);
+}
+.header-wrapper {
+    background-color: var(--header-color);
+}
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.main-wrapper nav.nav-side-panel {
+    background-color: var(--side-nav-color);
+}
+.main-container section.content-area-upper{
+    background-color: var(--main-color);
+}
+.main-container section.content-area-upper div.upper-content-left{
+    background-color: var(--upper-content-left);    
+}
+.main-container section.content-area-upper div.upper-content-center{
+    background-color: var(--upper-content-center);
+}
+.main-container section.content-area-upper div.upper-content-right{
+    background-color: var(--upper-content-right);
+}
+.main-container section.content-area div.middle-content-area{
+    background-color: var(--middle-content-color);
+}
+.main-container section.content-area div.lower-content-area{
+    background-color: var(--lower-content-color);
+}
+.main-wrapper .aside-wrapper {
+    background-color: var(--aside-color);
+}
+.footer-wrapper{
+    background-color: var(--footer-color);
+}

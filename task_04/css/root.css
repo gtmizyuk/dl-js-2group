@@ -1,0 +1,31 @@
+:root {
+    /* fonts */    
+    --main-font: 'Goldman', cursive;
+    --main-font-color: #eff7f6;
+    --small-fonts: 1rem;
+    --medium-fonts: 1.5rem;
+    --large-fonts: 2rem;
+    --extra-fonts: 3rem;
+
+    /* colors */
+    --main-color: #f8f7ff;
+    --header-color: #bfbdc1;
+    --side-nav-color: #FCCBA1;
+    --aside-color: #20bf55;
+    --footer-color:  #457b9d;
+
+    --upper-content-left: #da627d;
+    --upper-content-center: #ffd23f;
+    --upper-content-right: #ff9ebb;
+
+    --middle-content-color: #48cae4;
+    --lower-content-color: #023e8a;
+  
+    /* blocks size default */
+    /* height*/
+    --header-height: 70px;
+    --main-area-height: 850px; 
+    --section-content-area-height: 180px;
+    --article-area-height: 340px;
+    --footer-height: 40px;
+}

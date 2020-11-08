@@ -1,0 +1,6 @@
+/* CSS variables */
+@import './root.css';
+
+/* page styles */
+@import './main.css';
+@import './page-structure.css';

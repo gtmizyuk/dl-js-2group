@@ -1,0 +1,56 @@
+/* header */
+.header-wrapper {
+    min-height: var(--header-height);
+}
+
+/* main */
+main.main-wrapper {
+    min-height: var(--main-area-height);
+    display: flex;
+    flex-wrap: wrap; 
+}
+main.main-wrapper nav.nav-side-panel,
+main.main-wrapper aside.aside-wrapper {
+    width: 20%;
+}
+main.main-wrapper div.main-container {
+    width: 60%;
+}
+
+
+/* main areas */
+.main-container .content-area-upper{
+    display: flex;
+}
+section.content-area-upper {
+    min-height: var(--section-content-area-height);
+}
+section.content-area-upper div {
+    width: calc(100% / 3);
+}
+section.content-area .middle-content-area {
+    min-height: var(--article-area-height);
+}
+section.content-area .lower-content-area {
+    min-height: var(--article-area-height);
+}
+
+/* footer */
+footer {
+    min-height: var(--footer-height);
+}
+
+/* text vertical centering with flexbox */
+section.content-area-upper .upper-content-left,
+section.content-area-upper .upper-content-center,
+section.content-area-upper .upper-content-right,
+section.content-area .middle-content-area, 
+section.content-area .lower-content-area, 
+aside, 
+nav, 
+header, 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
