@@ -1,0 +1,30 @@
+/* columns flex-container */
+.flex-container {
+	display: flex; 
+    flex-direction: row;
+    background: #ffffff;
+    overflow-wrap: break-word;
+}
+.flex-container div.item1 {
+    width: 20%;
+    background-color: #fff;	   
+}
+.flex-container div.item2 {
+    width: 60%;
+    background-color: #f4f1de;
+}
+.flex-container div.item3 {
+	width: 20%;
+    background-color: #f8edeb;
+}
+.flex-container div.item1,
+.flex-container div.item2,
+.flex-container div.item1 {
+    padding: 0 10px 10px 0; 
+}
+.flex-container h2, 
+.flex-container h3, 
+.flex-container p {
+	padding: .4em 15px 0 15px;
+	margin: 0;
+}

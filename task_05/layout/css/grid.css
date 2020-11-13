@@ -1,0 +1,28 @@
+/* columns grid-container */
+.grid-container {
+	display: grid; 
+    grid-template-rows: 1fr;
+    grid-template-columns: 20% 1fr 20%;
+    background: #ffffff;
+    overflow-wrap: break-word;
+}
+.grid-container div.item1 {
+    background-color: #fff;	   
+}
+.grid-container div.item2 {
+    background-color: #f4f1de;
+}
+.grid-container div.item3 {
+	  background-color: #f8edeb;
+}
+.grid-container div.item1,
+.grid-container div.item2,
+.grid-container div.item1 {
+    padding: 0 10px 10px 0; 
+}
+.grid-container h2, 
+.grid-container h3, 
+.grid-container p {
+	padding: .4em 15px 0 15px;
+	margin: 0;
+}
