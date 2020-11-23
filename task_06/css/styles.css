@@ -1,0 +1,335 @@
+/* colors */
+:root {
+    --color-main: #0c0c0e;
+    --color-navbar: rgba(255, 255, 255, 0.9);
+    --color-primary-color: #000000;
+    --color-secondary-color: #FFFFFF;
+    --color-gray-1: #79797F;
+    --color-gray-2: #333333;
+    --color-gray-3: #626262;
+    --color-gray-4: #f2f2f7;
+}
+
+/* main styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-main);
+    text-align: left;
+    background-color: var(--color-secondary-color);
+
+}
+body main {
+    min-height: 100%;
+    margin-top: 5rem;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+img.fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* navbar */
+.navbar {
+    padding-top: 3px;
+    padding-bottom: 0;
+    z-index: 1000;
+    background-color: var(--color-navbar);
+    backdrop-filter: blur(10px);   
+}
+#navbarGlucode ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px; 
+    margin-top: 15px; 
+    margin-bottom: 15px;    
+}
+#navbarGlucode ul li {
+    margin: 0 0.5rem;    
+}
+#navbarGlucode ul li a {
+    color: var(--color-gray-1);
+}
+#navbarGlucode ul li a.get-in-touch-nav-link {
+    color: var(--color-main);
+    margin: 0 0.5rem;  
+    width: 150px;
+    height: 44px;
+    font-size: 15px; 
+    border: solid 2px var(--color-gray-3);
+}
+#navbarGlucode ul li a:hover {
+    color: var(--color-primary-color);
+}
+#navbarGlucode ul li a.get-in-touch-nav-link:hover {
+    font-weight: 700; 
+    border: solid 3px var(--color-gray-3);
+}
+
+/* home section elements */
+#home-intro-text h1 {
+    font-size: 3.75rem;
+    line-height: 4.125rem;
+    font-weight: 600;
+    padding-top: 2.5rem;
+}
+#home-intro-text h4 {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: var(--color-gray-1);
+}
+#home-intro-picture {
+    padding: 0 0 80px 0;
+}
+
+/* other sections */
+#home-design,
+#home-development,
+#home-featured-projects,
+#home-history,
+#great-people,
+#start-together,
+#blog {
+    padding: 80px 16px;
+}
+
+#home-design h2,
+#home-development h2,
+#home-featured-projects h2,
+#home-history h2,
+#great-people h2,
+#start-together h2,
+#blog h2 {
+    color: var(--color-primary-color);
+    font-size: 2.75rem;
+    line-height: 3.375rem;
+    font-weight: 600;
+}
+#home-design h4,
+#home-development h4,
+#home-featured-projects h4,
+#home-history h4,
+#great-people h4,
+#start-together h4 {
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: var(--color-gray-1);
+}
+#home-design .btn.btn-primary.rounded-pill,
+#home-development .btn.btn-primary.rounded-pill,
+#home-history .btn.btn-primary.rounded-pill,
+#great-people .btn.btn-primary.rounded-pill,
+#start-together .btn.btn-primary.rounded-pill,
+#blog .btn.btn-primary.rounded-pill {
+    background-color: var(--color-primary-color);
+    color: var(--color-secondary-color);
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#home-design .btn.btn-primary.rounded-pill:hover,
+#home-development .btn.btn-primary.rounded-pill:hover,
+#home-history .btn.btn-primary.rounded-pill:hover,
+#great-people .btn.btn-primary.rounded-pill:hover,
+#start-together .btn.btn-primary.rounded-pill:hover,
+#blog .btn.btn-primary.rounded-pill:hover {
+    background-color: var(--color-gray-2);
+}
+
+/* slider */
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+#carouselGlucode {
+    margin-top: 80px;
+}
+
+/* blog cards section */
+.no-underline, .no-underline:hover {
+    text-decoration: none;   
+}
+.blog-preview {
+    z-index: 1;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+}
+.card {
+    height: 100%;
+}
+.card .blog-preview img {
+    transition: transform .5s ease-in-out;  
+}
+.card .blog-preview img:hover {
+    transform: scale(1.04); 
+}
+/*
+.card .card-body {
+    opacity: 0.86;
+}*/
+.card .card-body:hover {
+    opacity: 1;
+}
+
+.card-body {
+    background-color: var(--color-gray-4);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+    padding: 1.25rem;
+}
+.card .post-tags {
+    font-size: 1.0625rem;
+    text-transform: uppercase;
+    color: var(--color-gray-1);
+}
+.card-title {
+    margin-bottom: 0.75rem;
+}
+
+h3.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-primary-color);
+}
+p.card-text {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: normal;
+    line-height: 1.625rem;
+    color: var(--color-gray-1);
+}
+p.card-text:last-child {
+    margin-bottom: 0;
+}
+
+/* footer */
+footer {
+    margin-top: 4.5rem;
+    padding: 15px 0 10px 0;
+    background-color: var(--color-gray-4);
+}
+.glucode-slogon .footer-image {
+    display: inline;
+}
+.glucode-slogon .footer-text {
+    display: inline;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+.footer-text {
+    font-size: 20px;
+    font-weight: 500;
+}
+span.copyright {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-gray-1);
+}
+.footer-social-links a {
+    vertical-align: middle;
+    font-size: 28px;
+    padding: 0 16px;
+    color: var(--color-primary-color);
+}
+
+/* mobile */
+@media (max-width: 990px) {
+    #home-intro-text h1 {
+        font-size: 2.125rem;
+        line-height: 2.563rem;
+    }
+    #home-design h2,
+    #home-development h2,
+    #home-featured-projects h2,
+    #home-history h2,
+    #great-people h2,
+    #start-together h2,
+    #blog h2 {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+    #home-intro-text h4,
+    #home-design h4,
+    #home-development h4,
+    #home-featured-projects h4,
+    #home-history h4,
+    #great-people h4,
+    #start-together h4 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    h3.card-title {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+    p.card-text {
+        font-size: 17px;
+        font-weight: 400;
+    }
+    footer {
+        margin-top: 2.1rem;
+    }
+    a.navbar-brand {
+        margin: 15px 0;
+        padding: 5px;
+    }
+    a.navbar-brand img {
+        height: 37px;
+        width: 137px;  
+    }
+    .glucode-slogon {
+        text-align: center;
+    }
+    .glucode-slogon .footer-image {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .glucode-slogon .footer-image svg {
+        height: 56px;
+        width: 56px;
+    }
+    #navbarGlucode {
+        margin-bottom: 100%;
+    }
+    #navbarGlucode ul li,
+    #navbarGlucode ul li a.get-in-touch-nav-link {
+        font-size: 32px;
+        font-weight: 700;  
+        width: auto;
+        height: 100%;
+    }
+    #navbarGlucode ul li a,
+    #navbarGlucode ul li a.get-in-touch-nav-link,
+    #navbarGlucode ul li a.get-in-touch-nav-link:hover {
+        color: var(--color-primary-color);  
+        border: none;
+        border-color: var(--color-primary-color) !important;    
+    }
+    #navbarGlucode ul li a.get-in-touch-nav-link,
+    #navbarGlucode ul li a.get-in-touch-nav-link:hover {
+        opacity: 1.0;
+        box-shadow: none;
+    }   
+}

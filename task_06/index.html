@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Web, iOS, Android Mobile App Development &amp; Design — Glucode</title>
+</head>
+<body>
+    <!-- Окремі нюанси верстки: 
+            - використаний базовий слайдер Bootstrap 4; 
+            - у правому верхньому куті кнопка трішки зміщена;
+            - вигляд меню на мобільному екрані зроблений з іншими стилями (без анімації);
+            - у блоці карток анімація застосована лише до зображень карток;
+            - валідація HTML (1 Warning);
+            - валідація CSS (8 Warnings, 1 Error);
+    -->    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light position-fixed fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                        <img src="./images/glucode-logo.svg" class="d-inline-block align-top" alt="glucode-logo" loading="lazy">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarGlucode" aria-controls="navbarGlucode" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div id="navbarGlucode" class="collapse navbar-collapse justify-content-end" >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#1">Design</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#2">Development</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#3">Company</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#4">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#5">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn get-in-touch-nav-link nav-link rounded-pill" href="#6">Get in Touch</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main class="container-fluid">
+        <section id="home-intro-text">
+            <div class="container">
+                <div class="row">
+                   <div class="col-sm-12 text-center">
+                        <h1>We design and develop apps for companies all over the world</h1>
+                        <h4>We believe that technology can make the world a better place.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="text-center" id="home-intro-picture">
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <picture class="img-fluid">
+                            <source srcset="https://static1.glucode.com/assets/home/image-home-header-mobile-light-mode-abb18525d3dba3e8627362a60b9c010494b05d5bb978d03c48f9893a57020aa5.jpg,
+                                https://static3.glucode.com/assets/home/image-home-header-mobile-light-mode@2x-dd005cb3b5025c75262a48e4c0817b68cfe312604be189d8f1943a676029823c.jpg 2x,
+                                https://static0.glucode.com/assets/home/image-home-header-mobile-light-mode@3x-d0e3c6d98606dc3c3af2c437362e587b20aad7a0ecc743fa9f928eea20b7fd28.jpg 3x" media="(prefers-color-scheme: light) and (max-width: 767.98px)">
+                            <source srcset="https://static1.glucode.com/assets/home/image-home-header-mobile-dark-mode-bdad9ed949cd287e6e64546e7d738c8115b59cc1299cc50af48ee5592f295780.jpg,
+                                https://static3.glucode.com/assets/home/image-home-header-mobile-dark-mode@2x-618e938198476c7f954fb57cb5235d0d611f3c0454d3402d04570f176789bb42.jpg 2x,
+                                https://static3.glucode.com/assets/home/image-home-header-mobile-dark-mode@3x-d75f44456ec2257e8a20fde0a68b5482c126d87daf50959584b48649db4915ac.jpg 3x" media="(prefers-color-scheme: dark) and (max-width: 767.98px)">
+                            <source srcset="https://static3.glucode.com/assets/home/image-home-header-desktop-dark-mode-712c427b2ca28e0955f3ca273131cf360e9b5eacefda2c761db8a0ab45a046d3.jpg,
+                                https://static0.glucode.com/assets/home/image-home-header-desktop-dark-mode@2x-06259f652d3268224ec29d7e8b835bb6c22aea88d94fdfbfae84ea630019cf97.jpg 2x,
+                                https://static2.glucode.com/assets/home/image-home-header-desktop-dark-mode@3x-57ab5a2e0e6e0d52a85546180010893fbd1b7f79e661098799752d4c81232774.jpg 3x" media="(prefers-color-scheme: dark)">
+                            <source srcset="https://static1.glucode.com/assets/home/image-home-header-desktop-light-mode-7b699e0ef72d7d3cc9f431cbbe32e9268f1c0d42e3e37b7bcbbe4c08ac2ea980.jpg,
+                                https://static0.glucode.com/assets/home/image-home-header-desktop-light-mode@2x-3b70b2270f483ed788eb561b7488b2f350afa9f4b6dcd49acfa933942cec1b80.jpg 2x,
+                                https://static0.glucode.com/assets/home/image-home-header-desktop-light-mode@3x-99de4bff3f63757320607cbe71ce49e915ed81236373a5c0c89d8bf89cd3f7b2.jpg 3x" media="(prefers-color-scheme: light)">
+                            <img src="https://static1.glucode.com/assets/home/image-home-header-desktop-light-mode-7b699e0ef72d7d3cc9f431cbbe32e9268f1c0d42e3e37b7bcbbe4c08ac2ea980.jpg" loading="lazy" class="img-fluid" alt="Mobile app interface designs">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="home-design">
+            <div class="row">
+                <div class="col-12 col-md-6 text-center">
+                    <picture class="img-fluid">
+                    <source srcset="https://static2.glucode.com/assets/home/image-home-design-mobile-light-mode-eaa9ced67a18cb551f0420cb78299f7549f916a24ff9aae59e44f7ef39efa0e7.jpg,
+                        https://static1.glucode.com/assets/home/image-home-design-mobile-light-mode@2x-bc47a9777ad0dc8021e2732b718b2c41a69fa7227454de194cc93e353d962456.jpg 2x,
+                        https://static1.glucode.com/assets/home/image-home-design-mobile-light-mode@3x-10edb942ac79412b9bec85cc390c63c3513cb67e5131b3e361cfd57aff91546a.jpg 3x" media="(prefers-color-scheme: light) and (max-width: 767.98px)">
+                    <source srcset="https://static2.glucode.com/assets/home/image-home-design-mobile-dark-mode-48d0b5eb08811867f95a8836554c22c4d2311299fe577197213c44fb75f4e1c0.jpg,
+                        https://static0.glucode.com/assets/home/image-home-design-mobile-dark-mode@2x-d00d69bc4ba1024e4621b886e9ffeaa6226bd5384c91418b1dc1da71a450a429.jpg 2x,
+                        https://static2.glucode.com/assets/home/image-home-design-mobile-dark-mode@3x-ec38ef06189e00c8b10908e1c82932a23b5c6b33be699fe8c65b7d80aef6e1a4.jpg 3x" media="(prefers-color-scheme: dark) and (max-width: 767.98px)">
+                    <source srcset="https://static3.glucode.com/assets/home/image-home-design-desktop-dark-mode-0039e1f988c14dfc8fd69e76aac2592d7d1bd9a85477a564d649ca19149c09cb.jpg,
+                        https://static1.glucode.com/assets/home/image-home-design-desktop-dark-mode@2x-cfedac09fe0992f79a50d9917803ed7513c7a24631771585e4239b896b8a5434.jpg 2x,
+                        https://static1.glucode.com/assets/home/image-home-design-desktop-dark-mode@2x-cfedac09fe0992f79a50d9917803ed7513c7a24631771585e4239b896b8a5434.jpg 3x" media="(prefers-color-scheme: dark)">
+                    <source srcset="https://static1.glucode.com/assets/home/image-home-design-desktop-light-mode-d6a8ea40d27b22159a3dc31826eab928cbdb52771dde56f1bfb59e9119001a1b.jpg,
+                        https://static0.glucode.com/assets/home/image-home-design-desktop-light-mode@2x-11a49d183a4cd069a434b9e960580c112ff5808d8955f959c621391e409e92cd.jpg 2x,
+                        https://static1.glucode.com/assets/home/image-home-design-desktop-light-mode@3x-8e09486dde825c75f28ea8bf21b0ffd23d7498541042eae9d2fa77361919fc15.jpg 3x" media="(prefers-color-scheme: light)">
+                    <img src="https://static1.glucode.com/assets/home/image-home-design-desktop-light-mode-d6a8ea40d27b22159a3dc31826eab928cbdb52771dde56f1bfb59e9119001a1b.jpg" loading="lazy" class="img-fluid" alt="Home Design">
+                    </picture>
+                </div>
+                <div class="col-12 col-md-6 d-flex align-items-center">
+                    <div class="text-center text-md-left mt-5 mt-md-0">
+                        <h2>Design</h2>
+                        <h4>We are creative problem solvers. We shape ideas into functional and engaging products.</h4>
+                        <a class="btn btn-primary rounded-pill my-3 px-7 py-2" href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container py-md-7 py-5" id="home-development">
+            <div class="row">
+              <div class="col-12 col-md-6 d-flex align-items-center order-1 order-md-0">
+                <div class="text-center text-md-left">
+                  <h2>Development</h2>
+                  <h4>We engineer unique ideas into meaningful experiences.</h4>
+                  <a class="btn btn-primary rounded-pill my-3 px-7 py-2" href="#">Learn More</a>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 text-center">
+                <picture>
+                  <source srcset="https://static2.glucode.com/assets/home/image-home-development-desktop-dark-mode-94c7744e8f9da2fbbc62e71ecf7583d98898ec4311f9a1c6bf6a0e15dd5b15d7.jpg,
+                      https://static2.glucode.com/assets/home/image-home-development-desktop-dark-mode@2x-1f0f24fb66b4527dd9d0dff5c0922ef89206aa22622ebb772261ae16eaf5a616.jpg 2x,
+                      https://static2.glucode.com/assets/home/image-home-development-desktop-dark-mode@2x-1f0f24fb66b4527dd9d0dff5c0922ef89206aa22622ebb772261ae16eaf5a616.jpg 3x" media="(prefers-color-scheme: dark)">
+                  <source srcset="https://static2.glucode.com/assets/home/image-home-development-desktop-light-mode-9f51b74d8815ea5a380b8279c0fcf5fe3d6028527c89cc5e2ae1da3df6589da7.jpg,
+                      https://static0.glucode.com/assets/home/image-home-development-desktop-light-mode@2x-8c76dd7cea7bce1f3f72b6358988c9c97f237a9f96f1ef686559c6ec5ee832c4.jpg 2x,
+                      https://static0.glucode.com/assets/home/image-home-development-desktop-light-mode@2x-8c76dd7cea7bce1f3f72b6358988c9c97f237a9f96f1ef686559c6ec5ee832c4.jpg 3x" media="(prefers-color-scheme: dark)">
+                  <img src="https://static2.glucode.com/assets/home/image-home-development-desktop-light-mode-9f51b74d8815ea5a380b8279c0fcf5fe3d6028527c89cc5e2ae1da3df6589da7.jpg" loading="lazy" alt="Home Development">
+                </picture>
+              </div>
+            </div>
+          </section>
+          <section class="py-md-7 py-5" id="home-featured-projects">
+                <div class="container mb-7">
+                    <div class="row">
+                        <div class="col-12 col-md-6 offset-md-3 text-center">
+                            <h2>Featured projects</h2>
+                            <h4>We enjoy collaborating with our clients to create apps that people love.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="carouselGlucode" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselGlucode" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselGlucode" data-slide-to="1"></li>
+                        <li data-target="#carouselGlucode" data-slide-to="2"></li>
+                        <li data-target="#carouselGlucode" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active">
+                            <img src="https://static3.glucode.com/assets/home/image-home-clubapp-desktop-c759e479e0fc6be1c2be230059a77a86393c119c02df1297cd0ea49330e5704f.jpg" loading="lazy" alt="Club App">
+                            
+                        </div>      
+                        <div class="carousel-item">
+                            
+                            <img src="https://static0.glucode.com/assets/home/image-home-discovery-desktop-5434ad494950752189f147c7c10c047e42283b2766eeadd641cf2ab9d7ce382f.jpg" loading="lazy" alt="Discovery">
+                        </div>      
+                        <div class="carousel-item">
+                            <img src="https://static3.glucode.com/assets/home/image-home-healthid-desktop-ca090933b7806eed636fbbe1ee61eadfc67d56cfbb33c2c1e553fcd0c9ab7a10.jpg" loading="lazy" alt="Health ID">
+                            
+                        </div> 
+                        <div class="carousel-item">
+                            
+                            <img src="https://static2.glucode.com/assets/home/image-home-humanwrites-desktop-93c63966f9aa011ea7e74dd187bae18afd7847faf6c520ea004f1f7d472e13e6.jpg" loading="lazy" alt="Humanwrit.es">
+                        </div> 
+                    </div>
+                
+                    <a class="carousel-control-prev" href="#carouselGlucode" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselGlucode" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+         
+          </section>
+          <section class="py-md-7 py-5" id="home-history">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8 offset-2 col-md-6 offset-md-0">
+                            <picture class="">
+                                <source srcset="https://static1.glucode.com/assets/company/image-company-logo-dark-002abca466c9ac16dc7fe90cb25688bdba572c40da27d4341b1fa6803c1f15e9.jpg,
+                                    https://static0.glucode.com/assets/company/image-company-logo-dark@2x-15f2f85426263eec073f93c7c9d8b401ef55a53714cbd97a24383d00349ea592.jpg 2x,
+                                    https://static0.glucode.com/assets/company/image-company-logo-dark@2x-15f2f85426263eec073f93c7c9d8b401ef55a53714cbd97a24383d00349ea592.jpg 3x" media="(prefers-color-scheme: dark)">
+                                <source srcset="https://static1.glucode.com/assets/company/image-company-logo-light-378f5c07b948a103f4b5892898eab48d2f78601c2d423296f5e7fb162cb2ae25.jpg,
+                                    https://static2.glucode.com/assets/company/image-company-logo-light@2x-1afea1a9ad28f1fa303bb90d062463dfb307db18b037285810a407049d1fd8ea.jpg 2x,
+                                    https://static2.glucode.com/assets/company/image-company-logo-light@2x-1afea1a9ad28f1fa303bb90d062463dfb307db18b037285810a407049d1fd8ea.jpg 3x" media="(prefers-color-scheme: light)">
+                                <img src="https://static1.glucode.com/assets/company/image-company-logo-light-378f5c07b948a103f4b5892898eab48d2f78601c2d423296f5e7fb162cb2ae25.jpg" loading="lazy" class="img-fluid" alt="Home History">
+                            </picture>
+                        </div>
+                        <div class="col-12 col-md-6 text-center text-md-left order-1 order-md-0 d-flex align-items-center mt-5 mt-md-0">
+                            <div>
+                                <h2>Since 2009</h2>
+                                <h4>We’ve been designing and developing apps for more than 10 years. Our experience has taught us that apps have the ability to improve people’s lives and make the world a better place. </h4>
+                                <a class="btn btn-primary rounded-pill my-3 px-7 py-2" href="#">Our Story</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </section>
+          <section class="container py-md-7 py-5" id="great-people">
+                <div class="row">
+                <div class="col-12 col-md-6 d-flex align-items-center order-1 order-md-0">
+                    <div class="text-center text-md-left mw-75">
+                    <h2>Great people make great apps</h2>
+                    <h4>We're creators, we're dreamers, we're innovators and we love what we do.</h4>
+                    <a class="btn btn-primary rounded-pill my-3 px-7 py-2" href="/careers">Join The team</a>
+                    </div>
+                </div>
+                    <div class="col-12 col-md-6 text-center mb-5 mb-md-0">
+                        <picture class="img-fluid">
+                            <source srcset="https://static3.glucode.com/assets/home/image-home-team-desktop-dark-mode-928b1aa82f93c9079db1e36186f5599eb28cf4cb3b87b8de26437deba9b50528.jpg,
+                                https://static1.glucode.com/assets/home/image-home-team-desktop-dark-mode@2x-1956d3dafd5cb6718818714220749255b28f5773c098e62ee6d6ab6730a35061.jpg 2x,
+                                https://static0.glucode.com/assets/home/image-home-team-desktop-dark-mode@3x-7db00d58d6302f292ef51c65d97a0e45f4ecd89cabf756e46fad4aa57bed731f.jpg 3x" media="(prefers-color-scheme: dark)">
+                            <source srcset="https://static0.glucode.com/assets/home/image-home-team-desktop-light-mode-0f6eee924b13f57564be22f0a4a126fbc6bd8292278f4e9c580524b7ed63325a.jpg,
+                                https://static1.glucode.com/assets/home/image-home-team-desktop-light-mode@2x-994ad6632a9c8839fcc743d27211f45e33cf89213a55da56db788d435ae5b0d5.jpg 2x,
+                                https://static3.glucode.com/assets/home/image-home-team-desktop-light-mode@3x-14ba623a02ee76436809fbef87700dc52ed5d0514069ea2f6d92cad11cc44842.jpg 3x" media="(prefers-color-scheme: light)">
+                            <img src="https://static0.glucode.com/assets/home/image-home-team-desktop-light-mode-0f6eee924b13f57564be22f0a4a126fbc6bd8292278f4e9c580524b7ed63325a.jpg" loading="lazy" class="img-fluid" alt="Greate People">
+                        </picture>
+                    </div>
+                </div>
+          </section>
+          <section class="py-md-7 py-5" id="start-together">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-5 mb-md-0">
+                            <picture class="img-fluid">
+                                <source srcset="https://static2.glucode.com/assets/home/image-home-projects-desktop-dark-mode-d8ef23804c70392a871506c6a76155caf1a1397b868e8f171322a24f2f86cde0.jpg,
+                                    https://static1.glucode.com/assets/home/image-home-projects-desktop-dark-mode@2x-e494e5f151cc71177a32d1a9060ffb412c9a5d9dc52584ab21bb23c0dee0f3d0.jpg 2x,
+                                    https://static1.glucode.com/assets/home/image-home-projects-desktop-dark-mode@2x-e494e5f151cc71177a32d1a9060ffb412c9a5d9dc52584ab21bb23c0dee0f3d0.jpg 3x" media="(prefers-color-scheme: dark)">
+                                <source srcset="https://static1.glucode.com/assets/home/image-home-projects-desktop-light-mode-d113c12588533c22255416f0ec382c02fa10ac1324552ce0f8ed73cca8f5abf4.jpg,
+                                    https://static0.glucode.com/assets/home/image-home-projects-desktop-light-mode@2x-b15c3c1d3490e8bace0896d7d409eda229b641c4e09e43a67cb583ef43189f39.jpg 2x,
+                                    https://static0.glucode.com/assets/home/image-home-projects-desktop-light-mode@2x-b15c3c1d3490e8bace0896d7d409eda229b641c4e09e43a67cb583ef43189f39.jpg 3x" media="(prefers-color-scheme: light)">
+                                <img src="https://static1.glucode.com/assets/home/image-home-projects-desktop-light-mode-d113c12588533c22255416f0ec382c02fa10ac1324552ce0f8ed73cca8f5abf4.jpg" loading="lazy" class="img-fluid" alt="Start Project Together">
+                            </picture>
+                        </div>
+                        <div class="col-12 col-md-6 text-center text-md-left order-1 order-md-0 d-flex align-items-center">
+                            <div>
+                                <h2>Let’s start a project together</h2>
+                                <h4>We believe that something truly amazing can come from combining your vision with our experience.</h4>
+                                <a class="btn btn-primary rounded-pill my-3 px-7 py-2" href="/contact_form">Let's Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </section>
+          <section class="container py-md-7 py-5" id="blog">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="mb-5">Read our blog</h2>
+                    </div>
+                </div>
+               
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                    <div class="col mb-4">
+                        <a class="no-underline" href="#">
+                            <div class="card border-0 rounded-lg">
+                                <div class="blog-preview">
+                                    <img src="./images/image-blog-artwork-meaningful.jpg" class="card-img-top" alt="Blog Artwork Meaningful">
+                                </div>
+                                <div class="card-body">
+                                    <p class="post-tags">
+                                        <span class="post-tag">Design</span>
+                                    </p>
+                                    <h3 class="card-title">How to Create Meaningful Interfaces</h3>
+                                    <p class="card-text">By putting the focus back on your user’s end-goal, they will find meaning in using your product, they will become loyal, and find your product valuable.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="col mb-4">
+                        <a class="no-underline" href="#">
+                            <div class="card border-0 rounded-lg">
+                                <div class="blog-preview">
+                                    <img src="./images/image-blog-artwork@2x.jpg" class="card-img-top" alt="Designing for Health">
+                                </div>
+                                <div class="card-body">
+                                    <p class="post-tags">
+                                        <span class="post-tag">Design</span>
+                                    </p>
+                                    <h3 class="card-title">Designing for Health</h3>
+                                    <p class="card-text">While practicality is important, empathetic design can go a long way when designing for health.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                
+                    <div class="col mb-4">
+                        <a class="no-underline" href="#">
+                            <div class="card border-0 rounded-lg">
+                                <div class="blog-preview">
+                                    <img src="./images/Glucode-Blog-Artwork-Option-B-Light-Mode.png" class="card-img-top" alt="Glucode-Blog-Artwork-Option-B-Light-Mode">
+                                </div>
+                                <div class="card-body">
+                                    <p class="post-tags">
+                                        <span class="post-tag">Swift</span>
+                                        <span class="post-tag">Development</span>
+                                    </p>
+                                    <h3 class="card-title">Mocks, Stubs and Fakes in Swift Unit Tests</h3>
+                                    <p class="card-text">Exploring the difference between mocks, stubs and fakes in testing.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <a class="btn btn-primary rounded-pill my-3 px-4" href="#">Read More</a>
+                    </div>
+                </div>
+          </section>
+        </main>
+        <footer>
+            <div id="footnote" class="container text-center text-md-left">
+                <div class="row">
+                    <div class="col-12 col-lg-4 mr-auto my-lg-4 my-0 mt-4 mb-1">
+                        <div class="glucode-slogon">
+                            <div class="footer-image">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M11.917 0C18.5 0 23.834 5.336 23.834 11.917c0 6.582-5.335 11.917-11.917 11.917C5.336 23.834 0 18.5 0 11.917 0 5.336 5.336 0 11.917 0zm2.08 11.947c.398.51.615 1.167.568 1.867-.092 1.364-1.167 2.422-2.469 2.516v3.143l.212-.002c2.31-.075 4.22-1.913 4.381-4.302.11-1.625-1.129-3.002-2.693-3.222zm-1.738-7.765l-.222.005C9.24 4.31 6.947 6.519 6.71 9.353c-.264 3.179 2.137 5.925 5.233 6.117.023.001.162.005.217-.004.953-.153 1.71-.809 1.769-1.968 0 0 .003-.105 0-.157-.03-.435-.161-.849-.374-1.212l-.058-.08-.169.085c-.343.16-.727.242-1.13.227-1.3-.046-2.335-1.084-2.416-2.368-.098-1.574 1.252-2.864 2.803-2.677.793.095 1.468.562 1.856 1.218l2.285-2.141-.16-.2c-.983-1.18-2.438-1.95-4.084-2.008l-.223-.003z"></path>
+                                </svg>
+                            </div>
+                            <div class="footer-text">
+                                <span class="align-middle"> Design. Develop. Enjoy.</span>
+                            </div>
+                        </div>
+                    </div>
+          
+                    <div class="col-12 col-lg-4 mx-auto my-lg-4 my-0 mb-1 text-center">
+                        <div class="right-reserved">
+                            <span class="copyright">&copy; 2020 Glucode. All rights reserved.</span>
+                        </div>
+                    </div>
+          
+                    <div class="col-12 col-lg-4 mx-auto my-4 text-center text-lg-right ">
+                        <div class="footer-social-links">
+                            <a class="footer-social-media-links" href="#"><i class="fab fa-linkedin"></i></a>
+                            <a class="footer-social-media-links" href="#"><i class="fab fa-dribbble"></i></a>
+                            <a class="footer-social-media-links" href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>
