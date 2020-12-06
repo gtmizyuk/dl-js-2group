@@ -6,27 +6,29 @@ body {
     left: 0; 
     right: 0;
     height: 100%;
+    background-color: rgba(114, 9, 183, .1);
 }
 body:before {
     content: "";
     position: absolute;
     height: 25%; 
     width: 25%;
-    background-color: #7209b7;
-    background: url(../images/bg.jpg);
+    background-color: rgba(121, 60, 161, 1);
+    background-image: url(../images/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1; /* зберігайте фон позаду вмісту */
     transform: scale(4);
     transform-origin: top left;
-    filter: blur(1px);
+    /*filter: blur(1px);*/
+    opacity: 0.7;
 }
 main div.container {
     width:350px; 
     background-color: #f3e9d2;
     color: white;
     box-shadow: 5px 5px 2px 1px rgba(114, 9, 183, .2);
-    opacity: 0.9;
+    opacity: 0.95;
 }
 main div.container div.row:nth-child(1) {
     background-color: #7209b7; 
@@ -59,5 +61,23 @@ label {
 @media (max-width: 767.98px) {
     h1 {
         margin: 0 auto .5rem auto;   
+    }
+}
+@media (max-height: 650px) {
+    body::after {
+        content: "";
+        position: absolute;
+        background: url(../images/bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0.7;
+        z-index: -5;
+    }
+    body:before {
+        height: 0;
     }
 }
