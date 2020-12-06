@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід у клуб &quot;Enter&quot;</title>
+    <link rel="icon" href="./images/logo.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body> 
+    <main>
+        <div class="container mx-auto my-3 wrapper">
+            <div class="row justify-content-md-center px-3">
+                <h1 class="enter-text">Вхід у клуб</h1>
+                <div class="media"><img class="mx-auto w-50 svg-my" src="./images/logo.svg" alt="Клуб &quot;Enter&quot;"></div>
+            </div>
+            <div class="row col-md-auto">
+                <div class="mb-2 mt-2">
+                    <form name="form_club">
+                        <div class="form-group mt-2"> 
+                        <label for="name">Ваше ім'я</label> <!-- class="sr-only" -->
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Введіть ваше ім'я" size="40">
+                        <small id="nameHelp" class="form-text text-muted">Наприклад, Олександр.</small>
+                        </div>
+                        <div class="form-group">
+                        <label for="city">Місто, де ви проживаєте</label> <!-- class="sr-only" -->
+                        <input type="text" class="form-control" id="city" name="city" aria-describedby="cityHelp" placeholder="Введіть місто, де ви проживаєте">
+                        <small id="cityHelp" class="form-text text-muted">Наприклад, Київ.</small>
+                        </div>
+                        <div class="form-group">
+                        <label for="age">Ваш вік</label> <!-- class="sr-only" -->
+                        <input type="text" class="form-control" id="age" name="age" aria-describedby="ageHelp" placeholder="Введіть ваш вік">
+                        <small id="ageHelp" class="form-text text-muted">Наприклад, 25.</small>
+                        </div>
+                        <button type="button" id="button" class="btn btn-outline-warning mb-2">Увійти</button>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* Main styles */
+main div.container {
+    width:500px; 
+    background-color: #f3f29f;
+    color: white;
+}
+main div.container div.row:nth-child(1) {
+    background-color: #a2a119; 
+    padding: 5px 0;    
+}
+ 
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    h1 {
+        margin: 0 auto .5rem auto;        
+    }    
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 575.98px) {
+    .ml-2, .mx-2 {
+        margin-left: 0!important;
+    } 
+    #second {
+        margin-top: 0!important;
+    }
+    main div.container {
+        border-left: none!important;     
+        border-right: none!important; 
+    }
+}

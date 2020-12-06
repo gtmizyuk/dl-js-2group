@@ -1,0 +1,63 @@
+/* Main styles */
+body {
+    position: absolute;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    height: 100%;
+}
+body:before {
+    content: "";
+    position: absolute;
+    height: 25%; 
+    width: 25%;
+    background-color: #7209b7;
+    background: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* зберігайте фон позаду вмісту */
+    transform: scale(4);
+    transform-origin: top left;
+    filter: blur(1px);
+}
+main div.container {
+    width:350px; 
+    background-color: #f3e9d2;
+    color: white;
+    box-shadow: 5px 5px 2px 1px rgba(114, 9, 183, .2);
+    opacity: 0.9;
+}
+main div.container div.row:nth-child(1) {
+    background-color: #7209b7; 
+}
+main div.container div.row:nth-child(1) h1.enter-text {
+    color: #f72585;
+    margin-top: 0.5rem!important;
+    margin-bottom: 0!important;
+}
+label {
+    color: #6c757d;
+}
+.svg-my {
+    filter: invert(48%) sepia(80%) saturate(350%) hue-rotate(145deg) brightness(118%) contrast(119%);
+    filter: drop-shadow(0 0 0.5rem #ff0073);
+}
+.btn-outline-warning {
+    color: #f72585!important;
+    border-color: #f72585!important;
+}
+.btn-outline-warning:hover {
+    background-color: #f72585!important;
+    color: white!important;
+}
+[type="button"]{
+    width: 90px;
+}  
+ 
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    h1 {
+        margin: 0 auto .5rem auto;   
+    }
+}
