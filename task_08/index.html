@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking students</title>
+    <style>
+        h1 {
+            color: #1d4e89;
+        }
+        h3 {
+            margin-bottom: 0;
+            color: #0e9594;
+        }
+        hr {
+            margin-top: 0;
+            border: 1px solid #00b2ca; 
+        }
+        ol {
+            list-style-type: none;
+        }
+        .messsage-absent {
+            color: #ff1654;
+        }
+    </style>
+</head>
+<body> 
+    <script>
+        const countStudentsInGroup = 10;
+        const upperPointPlus10 = 90;
+
+        const levels = {
+            A: [90, 100],
+            B: [80, 89],
+            C: [70, 79],
+            D: [60, 69],
+            F: [0, 59]
+        }
+        //console.log(levels.D);
+
+        const studentsGroupA = Array(countStudentsInGroup).fill().map(() => Math.round(Math.random() * upperPointPlus10));
+        const studentsGroupB = Array(countStudentsInGroup).fill().map(() => Math.round(Math.random() * upperPointPlus10));
+        const studentsGroupC = Array(countStudentsInGroup).fill().map(() => Math.round(Math.random() * upperPointPlus10));
+        //console.log(studentsGroupA, "<=== Group A");
+        //console.log(studentsGroupB, "<=== Group B");
+        //console.log(studentsGroupC, "<=== Group C");
+
+        const emotions = [
+            "Perfectly",
+            "Good",
+            "Not bad",
+            "Satisfactorily",
+            "Extremely negative"
+        ]
+
+        function rankingStudents(studentPoint, currentGradeArray){
+            return currentGradeArray.push(studentPoint)
+        }
+
+        function sortStudentsByPoints(students){
+            var gradeStudents = {
+                    A: [], 
+                    B: [], 
+                    C: [], 
+                    D: [],
+                    F: []
+            }
+            
+            for (let studentPoint of students){
+                if (studentPoint >= levels.A[0] && studentPoint <= levels.A[1]){
+                    rankingStudents(studentPoint, gradeStudents.A)  
+                } else if (studentPoint >= levels.B[0] && studentPoint <= levels.B[1]){
+                    rankingStudents(studentPoint, gradeStudents.B)  
+                } else if (studentPoint >= levels.C[0] && studentPoint <= levels.C[1]){
+                    rankingStudents(studentPoint, gradeStudents.C)  
+                } else if (studentPoint >= levels.D[0] && studentPoint <= levels.D[1]){
+                    rankingStudents(studentPoint, gradeStudents.D)  
+                } else {
+                    rankingStudents(studentPoint, gradeStudents.F)
+                }
+            }
+            console.log(gradeStudents);
+            return gradeStudents
+        }
+
+        function progressStudents(gradeStudents){
+            document.write("<h1>Ranking students:</h1>")
+            for (const grade in gradeStudents) {
+                //console.log(`${grade}: ${gradeStudents[grade]}`);
+                document.write(`<h3>Grade ${grade} </h3><hr>`)
+                if (gradeStudents[grade].length !== 0) {
+                    document.write(`<ol>`)    
+                    for (let i = 0; i < gradeStudents[grade].length; i++) {
+                        document.write(`<li>${i+1}) ${gradeStudents[grade][i]}</li>`)
+                        //console.log(`${gradeStudents[grade][i]}`);
+                    }
+                    document.write(`</ol>`);    
+                } else {
+                    document.write(`<p class="messsage-absent">Students with ${grade} grades are absent.</p>`);
+                    console.log(`Students with ${grade} grades are absent.`);
+                }
+                document.write(`<br>`)
+            }
+       }
+
+        function startGradingStudents() {
+            console.log(...arguments)
+            var allStudents = [].concat(...arguments);
+            var sortedStudents = sortStudentsByPoints(allStudents);
+            console.log(sortedStudents);
+            progressStudents(sortedStudents);
+        }
+
+        startGradingStudents(studentsGroupA, studentsGroupB, studentsGroupC);
+    </script>
+</body>
+</html>
