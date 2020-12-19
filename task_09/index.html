@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking students v2.0</title>
+    <style>
+        .h1-my {
+            color: #1d4e89;
+        }
+        .h3-my {
+            position: relative;
+            margin-bottom: 0;
+            color: #187a7a;
+            font-size: 24px;
+        }
+        hr {
+            margin-top: 0;
+            border: 1px solid #00bfd8; 
+            box-shadow: 1px 1px 2px 1px rgba(184, 255, 249, 0.2);
+        }
+        .span-my {
+            color: rgba(209, 55, 176, 0.9);
+            text-align: right;
+            position: absolute;
+            right: 5px;
+            font-size: 20px;
+        }
+        .ol-my {
+            list-style-type: none;
+            font-size: 20px;
+        }
+        .li-my {
+            font-size: 16px;
+            padding-bottom: 5px;
+        }
+        img {
+            background-color: #1d4e89;
+            height: 5rem;
+            border-radius: 100px;
+            margin: 5px 0;
+        }
+        .messsage-absent {
+            color: #ff1654;
+            margin-left: 40px;
+            font-size: 20px;
+            margin-top: 16px;
+        }
+        .card {
+            margin-left: 40px;
+            margin-bottom: 12px;
+        }
+        thead,
+        tfoot {
+            background-color: #7e0c0c;
+            color: #fff;
+        }
+        tbody {
+            background-color: #f7d9c4;
+        }
+        table {
+            border-collapse: collapse;
+            border: 2px solid #006d77;
+            font-size: .8rem;
+        }
+        th {
+            color: #1d4e89;
+            font-size: 20px; 
+        }
+        td,
+        th {
+            border: 1px solid rgb(219, 247, 255);
+            padding: 5px 10px;
+        }
+        tr {
+            color: #495867;
+            font-size: 16px; 
+        }
+        td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body> 
+    <div id="user-list-draw"></div>  
+    <script>
+        const upperPoints = 100;
+
+        const levels = {
+            A: [90, 100, "Perfectly"],
+            B: [80, 89, "Good"],
+            C: [70, 79, "Not bad"],
+            D: [60, 69, "Satisfactorily"],
+            F: [0, 59, "Extremely negative"]
+        };
+
+        const names = ["Michael", "Christopher", "Jessica", "Matthew", "Ashley", "Jennifer", "Joshua", "Amanda", "Daniel", "David", 
+                 "James", "Robert", "John", "Joseph", "Andrew", "Ryan", "Brandon", "Jason", "Justin", "Sarah", "William", 
+                 "Jonathan", "Stephanie", "Brian", "Nicole", "Nicholas", "Anthony", "Heather", "Eric", "Elizabeth", "Adam",
+                 "Megan", "Melissa", "Kevin", "Steven", "Thomas", "Timothy", "Christina", "Kyle", "Rachel", "Laura", "Lauren",
+                 "Amber", "Brittany", "Danielle", "Richard", "Kimberly", "Jeffrey", "Amy"];
+
+        const icons = ["Alligator", "Anteater", "Armadillo", "Auroch", "Axolotl", "Badger", "Bat", "Beaver", "Buffalo", "Camel", "Capybara", 
+                 "Chameleon", "Cheetah", "Chinchilla", "Chipmunk", "Chupacabra", "Cormorant", "Coyote", "Crow", "Dingo", "Dinosaur", 
+                 "Dolphin", "Duck", "Elephant", "Ferret", "Fox", "Frog", "Giraffe", "Gopher", "Grizzly", "Hedgehog", "Hippo", "Hyena", 
+                 "Ibex", "Ifrit", "Iguana", "Jackal", "Kangaroo", "Koala", "Kraken", "Lemur", "Leopard", "Liger", "Llama", "Manatee", 
+                 "Mink", "Monkey", "Moose", "Narwhal", "Nyan Cat", "Orangutan", "Otter", "Panda", "Penguin", "Platypus", "Pumpkin", 
+                 "Python", "Quagga", "Rabbit", "Raccoon", "Rhino", "Sheep", "Shrew", "Skunk", "Squirrel", "Tiger", "Turtle", "Walrus", "Wolf", "Wolverine", "Wombat"];
+        
+        const courses = ["Python for Everybody", "Deep Learning", "Introduction to Data Science", "Machine Learning", "Cloud Architecture with Google Cloud", 
+                   "Excel Skills for Business", "Cybersecurity", "Natural Language Processing", "Introduction to Finance and Accounting",
+                   "Graphic Design", "Business Analytics", "UI/UX Design", "Search Engine Optimization (SEO)", "Software Product Management",
+                   "AWS Fundamentals", "Data Structures and Algorithms", "Full-Stack Web Development", "Object Oriented Programming in Python",
+                   "The Singer Songwriter", "HTML, CSS, and Javascript for Web Developers"];
+ 
+        function randomData(item) {
+            return Math.floor(Math.random() * Math.floor(item));
+        };
+        
+        function pathToImage() {
+            return "./images/icons/" + icons[randomData(icons.length)] + ".png"
+        };
+      
+        let studentsGroups = {
+            "groupA": {},
+            "groupB": {},
+            "groupC": {}    
+        };
+        let studentsOrderIds = {'groupA': 0, 'groupB': 0, 'groupC': 0};
+        for (let i = 0; i < names.length / 3; i++) {
+            
+            let arrGroupsNames = Object.keys(studentsGroups);
+            let studentsLength = Object.keys(studentsGroups).length;
+            let numberGroup = randomData(studentsLength);
+            let randGroup = arrGroupsNames[numberGroup];
+            
+            let studentIdInGroup = studentsOrderIds[randGroup];
+            studentsOrderIds[randGroup] += 1;
+            
+            studentsGroups[randGroup][studentIdInGroup] = [
+                randGroup,
+                pathToImage(), 
+                names[randomData(names.length)],
+                randomData(upperPoints),
+                courses[randomData(courses.length)]
+            ]
+        }
+ 
+        function getEmotions(grade) {
+            return levels[grade][2]
+        }
+
+        function rankingStudents(studentStat, currentGradeArray){
+            return currentGradeArray.push(studentStat)
+        }
+
+        function sortStudentsByPoints(students){
+            var gradeStudents = {
+                    gradeA: [], 
+                    gradeB: [], 
+                    gradeC: [], 
+                    gradeD: [],
+                    gradeF: []
+            }
+            
+            for (const studentPoint in students){
+                let obj = students[studentPoint];
+                for (const item in obj) {
+                    let row = obj[item];
+                    let point = row[3];
+                    if (point >= levels.A[0] && point <= levels.A[1]){
+                        rankingStudents(row, gradeStudents.gradeA)  
+                    } else if (point >= levels.B[0] && point <= levels.B[1]){
+                        rankingStudents(row, gradeStudents.gradeB)  
+                    } else if (point >= levels.C[0] && point <= levels.C[1]){
+                        rankingStudents(row, gradeStudents.gradeC)  
+                    } else if (point >= levels.D[0] && point <= levels.D[1]){
+                        rankingStudents(row, gradeStudents.gradeD)  
+                    } else {
+                        rankingStudents(row, gradeStudents.gradeF)
+                    }
+                }
+            }
+            return gradeStudents
+        }
+
+        function createElement(tag, className, innerText) {
+            var newObject = document.createElement(tag);
+            newObject.className = (className) ? className : false;
+            newObject.innerHTML = (innerText) ? innerText : false;
+            return newObject
+        }
+
+        function createCardStudent(id, groupName, pathPhotoStudent, studentName, points, course) {
+           return ['<div class="card">',
+                        '<table',
+                            '<thead>',
+                                '<tr>',
+                                    '<th>Group '+groupName+'</th>',
+                                    '<th colspan="2" scope="col">Student '+id+'</th>',
+                                '</tr>',
+                            '</thead>',
+                            '<tbody>',
+                                '<tr>',
+                                    '<td rowspan="3" scope="row">',
+                                        '<img src="'+pathPhotoStudent+'" alt="'+studentName+'" title="'+studentName+'">',
+                                    '</td>',
+                                    '<td>Name</td>',
+                                    '<td>'+studentName+'</td>',
+                                '</tr>',
+                                '<tr>',
+                                    '<td scope="row">Points</td>',
+                                    '<td>'+points+'</td>',
+                                '</tr>',
+                                '<tr>',
+                                    '<td scope="row">Course</td>',
+                                    '<td>'+course+'</td>',
+                                '</tr>',
+                            '</tbody>',
+                        '</table>',
+                    '</div>'].join('\n')
+        }
+
+        function drawGradeStudents(gradeStudents){
+            let studentListDisplay = document.querySelector("#user-list-draw");
+            let h1 = createElement("h1", "h1-my", "Ranking students v2.0");
+            studentListDisplay.appendChild(h1);  
+            
+            for (const grade in gradeStudents) {
+                let h3 = createElement("h3", "h3-my", `Grade ${grade.slice(-1)}<hr>`);
+                h1.appendChild(h3);
+                            
+                let span = createElement("span", "span-my", `${getEmotions(grade.slice(-1))}`);
+                h3.appendChild(span);
+                
+                let arr = gradeStudents[grade];
+                if (arr.length !== 0) {
+                    for (let i = 0; i < arr.length; i++) {
+                        
+                        let arrStat = gradeStudents[grade][i]; 
+                        card = createCardStudent(i+1, 
+                                          arrStat[0].slice(-1),
+                                          arrStat[1],
+                                          arrStat[2],  
+                                          arrStat[3],
+                                          arrStat[4]
+                                          );
+                        h3.innerHTML += card;
+                        /*
+                        let ol = createElement("ol", "ol-my", `Student ${i+1}:`);     
+                        let li = createElement("li", "li-my", `Group: ${arrStat[0].slice(-1)}<br>
+                                                               <img src="${arrStat[1]}" alt="${arrStat[1]}" title="${arrStat[2]}"><br>
+                                                               Name: ${arrStat[2]}<br>
+                                                               Points: ${arrStat[3]}<br>
+                                                               Course: ${arrStat[4]}`
+                        ); 
+                        ol.appendChild(li);  
+                        h3.appendChild(ol); 
+                        */
+                    } 
+                } else {
+                    let p = createElement("p", "messsage-absent", `Students with ${grade.slice(-1)} grades are absent.<br>`);    
+                    h3.appendChild(p);
+                    console.log(`Students with ${grade.slice(-1)} grades are absent.`);
+                }
+            }
+        }
+
+        function startGradingStudents() {
+            let sortedStudents = sortStudentsByPoints(...arguments);
+            console.log(sortedStudents);
+            drawGradeStudents(sortedStudents);
+        }
+        startGradingStudents(studentsGroups);
+    </script>
+</body>
+</html>
