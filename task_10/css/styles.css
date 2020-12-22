@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'caribbeanregular';
+    src: url('../fonts/caribbean-webfont.woff2') format('woff2'),
+         url('../fonts/caribbean-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'caribbeanregular';
+    background-image: url("../images/bg-map-world.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-attachment: fixed;
+}    
+.wrapper-for-boxes {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-image: url("../images/bg-paper.png");
+   background-position-x: center;
+   background-position-y: center;
+   background-repeat: no-repeat;  
+   background-size: 450px;
+   min-height: 400px;
+   background-color: rgba(255, 255, 255, 0.6);
+   z-index: -1;
+}
+
+.boxes {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   background-size: 850px;
+}
+.boxes-column-end-game {
+    flex-direction: column;
+}
+.artage {
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -180px;
+}
+.start-message {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 4rem;
+    margin-bottom: 15px;
+    color: rgb(39, 52, 68);
+    line-height: 3rem;
+    width: 300px;
+    overflow-wrap: break-word;
+}
+.start-button {
+    display: inline-block;
+    padding: 15px 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 22px;
+    border: 2px solid rgb(233, 197, 99);
+    text-decoration: none;
+    color: rgb(146, 132, 92);
+    filter: drop-shadow(0 0 0.1rem white);
+}
+.start-button:hover {
+    color: rgb(192, 157, 61);
+}
+.end-button {
+    text-align: center;
+    border-radius: 5px;
+    font-size: 24px;
+    border: 2px solid rgb(233, 197, 99);
+    text-decoration: none;
+    color: rgb(146, 132, 92);
+    filter: drop-shadow(0 0 0.1rem white);
+}
+.end-button:hover {
+    color: rgb(192, 157, 61);
+}
+.box + .box {
+    padding-left: 10px;
+}
+.flint-speaks {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.flint-speaks-wrapper {
+    color: rgb(47, 77, 114);
+    padding: 5px;
+}
+h2 span {
+    color: rgb(175, 54, 139);
+}
+.rules-game { 
+    text-align: center;
+    color: rgb(85, 42, 78);
+}
+.wrapper-rules {    
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.click-counter {
+    margin-top: 2rem;
+    color: rgb(85, 42, 78);
+    font-size: 28px;
+    font-style: normal;
+}
+.boxes .end-game-message {
+    font-size: 70px;
+    color:rgb(206, 159, 32);
+}
+.boxes .end-button {
+    padding: 15px;
+    font-size: 30px;
+}
+
+/* breakpoints */ 
+@media (max-width: 985.98px) { 
+    a img {
+        width: 90px;
+    }
+    .flint-speaks-wrapper{
+        font-size: 18px; 
+    }
+    .wrapper-rules {
+        font-size: 14px; 
+    }
+    .click-counter {
+        font-size: 20px; 
+    }
+    .boxes-column-end-game {
+        flex-direction: column;
+    }
+    h1 .end-game-message {
+        font-size: 50%;
+    }
+    .boxes .end-game-message {
+        font-size: 35px;
+    }
+    .boxes .end-button {
+        font-size: 25px;
+    }
+
+}
+@media (max-width: 685.98px) { 
+    a img {
+        width: 60px;
+    }
+    .boxes-column-end-game {
+        flex-direction: column;
+    }
+    .boxes .end-button {
+        font-size: 20px;
+    }
+}
