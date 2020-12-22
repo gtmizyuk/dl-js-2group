@@ -94,8 +94,8 @@ function toСhooseBox(e) {
     displayClicks(clickCount);
     if (attemptsCountCalc > 1) {
         attemptsCountCalc -= 1;
-        let userBox = e.currentTarget.id.slice(3);
-        console.log(computerBox, e.currentTarget.id.slice(3));
+        let userBox = parseInt(e.currentTarget.id.slice(3), 10);
+        console.log(computerBox, parseInt(e.currentTarget.id.slice(3), 10));
 
         if (computerBox == userBox) {
             e.target.src = "./images/box_gold.png";
