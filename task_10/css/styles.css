@@ -178,7 +178,7 @@ h2 span {
         font-size: 22px;
     }
     .boxes {
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
     }
 }
 @media (max-width: 685.98px) { 
@@ -213,6 +213,11 @@ h2 span {
         font-size: 18px;
     }
     .boxes {
-        margin-top: 7.5rem;
+        margin-top: 2.5rem;
+    }
+}
+@media (max-width: 342.98px) { 
+    .boxes {
+        margin-top: 5.5rem;
     }
 }
