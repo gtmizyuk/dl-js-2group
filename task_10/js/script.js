@@ -94,8 +94,8 @@ function toСhooseBox(e) {
     displayClicks(clickCount);
     if (attemptsCountCalc > 1) {
         attemptsCountCalc -= 1;
-        let userBox = parseInt(e.currentTarget.id.slice(3), 10);
-        console.log(computerBox, parseInt(e.currentTarget.id.slice(3), 10));
+        let userBox = e.currentTarget.id.slice(3);
+        console.log(computerBox, e.currentTarget.id.slice(3));
 
         if (computerBox == userBox) {
             e.target.src = "./images/box_gold.png";
@@ -109,7 +109,7 @@ function toСhooseBox(e) {
     } else {
         e.target.src = "./images/box_opened.png";
         document.querySelector(`div#box${computerBox} a img`).src = "./images/box_gold.png";
-        console.log(computerBox, parseInt(e.currentTarget.id.slice(3), 10));
+        console.log(computerBox, e.currentTarget.id.slice(3));
         console.log(messageSuccess + `\n${attemptsCount} ` + messages[2] + messages[1] + `${computerBox}!`);
         alert(messageSuccess + `\n${attemptsCount} ` + messages[2] + messages[1] + `${computerBox}!`);
         endGame(false);

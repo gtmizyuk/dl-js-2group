@@ -23,15 +23,13 @@ body {
    bottom: 0;
    left: 0;
    background-image: url("../images/bg-paper.png");
-   background-position-x: center;
-   background-position-y: center;
+   background-position: center center;
    background-repeat: no-repeat;  
    background-size: 450px;
-   min-height: 400px;
+   min-height: 300px;
    background-color: rgba(255, 255, 255, 0.6);
    z-index: -1;
 }
-
 .boxes {
    display: flex;
    flex-direction: row;
@@ -39,6 +37,10 @@ body {
    justify-content: center;
    flex-wrap: wrap;
    background-size: 850px;
+   position: absolute;
+}
+a img {
+    width: 90px;
 }
 .boxes-column-end-game {
     flex-direction: column;
@@ -110,16 +112,20 @@ h2 span {
     background-color: rgba(255, 255, 255, 0.5);
 }
 .click-counter {
-    margin-top: 2rem;
+    margin-top: -50px;
     color: rgb(85, 42, 78);
     font-size: 28px;
     font-style: normal;
+    bottom: 0;
+    position: absolute;
 }
 .boxes .end-game-message {
+    margin-top: -180px;
     font-size: 70px;
     color:rgb(206, 159, 32);
 }
 .boxes .end-button {
+    margin-top: 5px;
     padding: 15px;
     font-size: 30px;
 }
@@ -127,7 +133,7 @@ h2 span {
 /* breakpoints */ 
 @media (max-width: 985.98px) { 
     a img {
-        width: 90px;
+        width: 75px;
     }
     .flint-speaks-wrapper{
         font-size: 18px; 
@@ -150,7 +156,30 @@ h2 span {
     .boxes .end-button {
         font-size: 25px;
     }
-
+    .wrapper-for-boxes {
+        background-size: 330px;
+    }
+    .wrapper-for-boxes .start-message {
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 2.3rem;
+        width: 240px;
+    }
+    .artage {
+        width: 0;
+    }
+    .start-button {
+        padding: 12px 12px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .click-counter {
+        font-size: 22px;
+    }
+    .boxes {
+        margin-top: 2.5rem;
+    }
 }
 @media (max-width: 685.98px) { 
     a img {
@@ -161,5 +190,29 @@ h2 span {
     }
     .boxes .end-button {
         font-size: 20px;
+    }
+    .boxes .end-game-message {
+        font-size: 25px;
+    }
+    .wrapper-for-boxes {
+        background-size: 250px;
+    }
+    .wrapper-for-boxes .start-message {
+        font-size: 0.8rem;
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 1.7rem;
+        width: 180px;
+    }
+    .start-button {
+        padding: 8px 8px;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+    .click-counter {
+        font-size: 18px;
+    }
+    .boxes {
+        margin-top: 7.5rem;
     }
 }
