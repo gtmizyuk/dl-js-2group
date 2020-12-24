@@ -210,7 +210,7 @@ function toСhooseBox(e) {
 
     let result = document.querySelector(".rules-game");
     if (flagTreasure == 1){
-        result.innerText = messageSuccess + messages[0] + `for ${clickCurrentCount} attempts!`;
+        result.innerText = messageSuccess + " " + messages[0] + `for ${clickCurrentCount} attempts!`;
         distanceCompleted();
     } else if (flagLostTreasure == 2) {
         result.innerText = messageSuccess + ` ${attemptsCount} ` + messages[2] + messages[1] + `${computerBox}!`;
