@@ -12,7 +12,7 @@ const pirateOutcry = ['Land rat!',
                       'The curse of the jellyfish!', 
                       'Thunder and lightning!'
 ];
-const messages = ["\nCongratulations!\nYou have found the treasure ", "\nThe treasure was in the case ", "attempts were used."];
+const messages = ["Congratulations! You have found the treasure ", " The treasure was in the case ", " attempts were used."];
 
 function getRandomInt(max) {
      return Math.floor(Math.random() * Math.floor(max));
@@ -203,7 +203,7 @@ function toСhooseBox(e) {
             e.target.src = "./images/box_opened.png";
             document.querySelector(`#box${computerBox} a img`).src = "./images/box_gold.png";
             console.log(computerBox, parseInt(e.currentTarget.id.slice(3), 10));
-            console.log(messageSuccess + `\n${attemptsCount} ` + messages[2] + messages[1] + `${computerBox}!`);
+            console.log(messageSuccess + ` ${attemptsCount} ` + messages[2] + messages[1] + `${computerBox}!`);
             flagLostTreasure = 2;  
         }      
     }
@@ -213,7 +213,7 @@ function toСhooseBox(e) {
         result.innerText = messageSuccess + messages[0] + `for ${clickCurrentCount} attempts!`;
         distanceCompleted();
     } else if (flagLostTreasure == 2) {
-        result.innerText = messageSuccess + `\n${attemptsCount} ` + messages[2] + messages[1] + `${computerBox}!`;
+        result.innerText = messageSuccess + ` ${attemptsCount} ` + messages[2] + messages[1] + `${computerBox}!`;
         distanceCompleted();
     } 
 
