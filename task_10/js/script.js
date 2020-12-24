@@ -12,7 +12,7 @@ const pirateOutcry = ['Land rat!',
                       'The curse of the jellyfish!', 
                       'Thunder and lightning!'
 ];
-const messages = ["Congratulations! You have found the treasure ", " The treasure was in the case ", " attempts were used."];
+const messages = [" Congratulations! You have found the treasure ", " The treasure was in the case ", " attempts were used."];
 
 function getRandomInt(max) {
      return Math.floor(Math.random() * Math.floor(max));
