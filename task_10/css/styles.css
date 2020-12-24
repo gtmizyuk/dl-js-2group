@@ -94,6 +94,7 @@ a img {
 }
 .flint-speaks {
     text-align: center;
+    line-height: 1.5rem;
     background-color: rgba(255, 255, 255, 0.5);
 }
 .flint-speaks-wrapper {
@@ -105,11 +106,13 @@ h2 span {
 }
 .rules-game { 
     text-align: center;
+    line-height: 1.5rem;
     color: rgb(85, 42, 78);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1px;
 }
 .wrapper-rules {    
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
 }
 .click-counter {
     margin-top: -50px;
@@ -124,10 +127,21 @@ h2 span {
     font-size: 70px;
     color:rgb(206, 159, 32);
 }
+.boxes .end-game-message-2 {
+    margin-top: -10px;
+    font-size: 35px;
+    color:rgb(92, 76, 33);
+}
 .boxes .end-button {
     margin-top: 5px;
     padding: 15px;
     font-size: 30px;
+}
+.wrapper-rules span.distance {
+    color:rgba(255, 50, 50, 0.979); 
+}
+.rules-game span.distance-completed {
+    color:rgb(71, 146, 0);  
 }
 
 /* breakpoints */ 
@@ -138,8 +152,14 @@ h2 span {
     .flint-speaks-wrapper{
         font-size: 18px; 
     }
+    .flint-speaks {
+        line-height: 1.4rem;
+    }
     .wrapper-rules {
-        font-size: 14px; 
+        font-size: 16px; 
+    }
+    .rules-game { 
+        line-height: 1.3rem;
     }
     .click-counter {
         font-size: 20px; 
@@ -152,6 +172,10 @@ h2 span {
     }
     .boxes .end-game-message {
         font-size: 35px;
+    }
+    .boxes .end-game-message-2 {
+        text-align: center;
+        font-size: 20px;
     }
     .boxes .end-button {
         font-size: 25px;
@@ -178,7 +202,7 @@ h2 span {
         font-size: 22px;
     }
     .boxes {
-        margin-top: 1.5rem;
+        margin-top: 1.7rem;
     }
 }
 @media (max-width: 685.98px) { 
@@ -194,8 +218,24 @@ h2 span {
     .boxes .end-game-message {
         font-size: 25px;
     }
+    .boxes .end-game-message-2 {
+        text-align: center;
+        font-size: 15px;
+    }
     .wrapper-for-boxes {
         background-size: 250px;
+    }
+    .flint-speaks {
+        line-height: 1.2rem;
+    }
+    .flint-speaks-wrapper{
+        font-size: 16px; 
+    }
+    .wrapper-rules {
+        font-size: 14px; 
+    }
+    .rules-game { 
+        line-height: 1.1rem;
     }
     .wrapper-for-boxes .start-message {
         font-size: 0.8rem;
@@ -213,11 +253,21 @@ h2 span {
         font-size: 18px;
     }
     .boxes {
-        margin-top: 2.5rem;
+        margin-top: 4.5rem;
     }
 }
-@media (max-width: 342.98px) { 
-    .boxes {
-        margin-top: 5.5rem;
+@media (max-width: 348.98px) { 
+    .flint-speaks {
+        line-height: 1rem;
     }
+    .flint-speaks-wrapper{
+        font-size: 14px; 
+    }
+    .wrapper-rules {
+        font-size: 12px; 
+    }
+    .boxes {
+        margin-top: 8.3rem;
+    }
+    
 }
