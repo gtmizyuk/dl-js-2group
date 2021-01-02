@@ -1067,7 +1067,7 @@ function btnAdminLogOut() {
     let sessionClubMembers = sessionStorage.getItem('allStarsСlubMembersSaveSession');
     localStorage.setItem("moviesProSaveStorage", sessionMoviewsPro);
     localStorage.setItem("allStarsСlubMembersSaveStorage", sessionClubMembers);
-    window.location = "../index.html";
+    window.location.pathname = "../index.html";
     console.log("The session ended.");  
     console.log("Log out.");    
     showSelectCaseMovie("selectMovie");
