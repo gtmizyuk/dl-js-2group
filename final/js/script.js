@@ -1048,7 +1048,9 @@ if (btnCloseGetIdCard) {
 /* Site directory */
 let pathSiteDirectory = "/dl-js-2group/final/";
 let origin = window.location.origin;
-console.log(origin);
+console.log(window.location, "window.location");
+console.log(origin, "origin");
+console.log(origin.pathname, "pathname");
 
 let btnCloseSignIn = document.querySelector("#buttonCloseLogIn"); 
 if (btnCloseSignIn) {
@@ -1074,7 +1076,7 @@ function btnAdminLogOut() {
     localStorage.setItem("moviesProSaveStorage", sessionMoviewsPro);
     localStorage.setItem("allStarsСlubMembersSaveStorage", sessionClubMembers);
     //window.location.pathname = pathSiteDirectory + "index.html";
-    window.location = origin + "/index.html";
+    window.location = origin + pathSiteDirectory + "index.html";
     console.log("The session ended.");  
     console.log("Log out.");    
     showSelectCaseMovie("selectMovie");
@@ -1107,7 +1109,7 @@ function btnAdminSignIn() {
         sessionStorage.setItem('allStarsСlubMembersSaveSession', JSON.stringify(dataMembersClub));
         console.log("Logged in as administrator.");
         //window.location.pathname = pathSiteDirectory + "admin/index.html";
-        window.location = origin + "/admin/index.html";
+        window.location = origin + pathSiteDirectory + "admin/index.html";
     }  
 }
 
