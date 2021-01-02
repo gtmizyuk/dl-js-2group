@@ -1143,7 +1143,7 @@ function staticticsLastReview(dataMovies) {
         document.querySelector(".last-review-name-actor").innerText = lastReviewNameActor;
         
         let lastReviewPhotoActor = arrayLastReview[1];
-        document.querySelector(".last-review-photo-actor img").src = lastReviewPhotoActor;
+        document.querySelector(".last-review-photo-actor img").src = "." + lastReviewPhotoActor;
         document.querySelector(".last-review-photo-actor img").title = lastReviewNameActor;
         document.querySelector(".last-review-photo-actor img").alt = lastReviewNameActor;
     
