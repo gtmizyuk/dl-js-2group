@@ -42,49 +42,49 @@ function getCurrentDate() {
 let moviesPro = {
     "The Mandalorian": {
         "titleMovie": "The Mandalorian",
-        "posterMovie": "./images/bgs/mandalorian-bg.jpg", 
+        "posterMovie": "../images/bgs/mandalorian-bg.jpg", 
         "siteMovie": "https://www.starwars.com/series/the-mandalorian", 
         "countReviews": 0, //7
         "averageStars": 0, //4
         "statsMovie": {
             "Daniel Radcliffe": {
-                "photoActor": "./images/reviews/Daniel Radcliffe.jpg",
+                "photoActor": "../images/reviews/Daniel Radcliffe.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-12-13T18:32:27.000+02:00"
             },
             "Nicholas Cage": {
-                "photoActor": "./images/reviews/Nicholas Cage.jpg",
+                "photoActor": "../images/reviews/Nicholas Cage.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-10-14T11:14:45.000+03:00"
             },
             "Kate Hudson": {
-                "photoActor": "./images/reviews/Kate Hudson.jpg",
+                "photoActor": "../images/reviews/Kate Hudson.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-12T14:32:53.000+02:00"
             },
             "Milla Jovovich": {
-                "photoActor": "./images/reviews/Milla Jovovich.jpg",
+                "photoActor": "../images/reviews/Milla Jovovich.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-12-04T19:15:15.000+02:00"
             },
             "Leonardo DiCaprio": {
-                "photoActor": "./images/reviews/Leonardo DiCaprio.jpg",
+                "photoActor": "../images/reviews/Leonardo DiCaprio.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-12-15T17:59:15.000+02:00"
             },
             "Julia Roberts": {
-                "photoActor": "./images/reviews/Julia Roberts.jpg",
+                "photoActor": "../images/reviews/Julia Roberts.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-15T18:09:25.000+02:00"
             },
             "Adam Sandler": {
-                "photoActor": "./images/reviews/Adam Sandler.jpg",
+                "photoActor": "../images/reviews/Adam Sandler.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-08T12:22:11.000+02:00"
@@ -93,37 +93,37 @@ let moviesPro = {
     },
     "Sherlock": {
         "titleMovie": "Sherlock",
-        "posterMovie": "./images/bgs/sherlock-bg.jpg", 
+        "posterMovie": "../images/bgs/sherlock-bg.jpg", 
         "siteMovie": "https://sherlockholmes.com/", 
         "countReviews": 0, //5
         "averageStars": 0, //3
         "statsMovie": {
             "Daniel Radcliffe": {
-                "photoActor": "./images/reviews/Daniel Radcliffe.jpg",
+                "photoActor": "../images/reviews/Daniel Radcliffe.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-11-23T12:14:45.000+02:00"
             },
             "Nicholas Cage": {
-                "photoActor": "./images/reviews/Nicholas Cage.jpg",
+                "photoActor": "../images/reviews/Nicholas Cage.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-12-13T08:15:21.000+02:00"
             },
             "Hugh Jackman": {
-                "photoActor": "./images/reviews/Hugh Jackman.jpg",
+                "photoActor": "../images/reviews/Hugh Jackman.jpg",
                 "ratingActor": 2,
                 "commentActor": "Weak plot.",
                 "dateCommentActor": "2020-12-10T23:15:34.000+02:00"
             },
             "Milla Jovovich": {
-                "photoActor": "./images/reviews/Milla Jovovich.jpg",
+                "photoActor": "../images/reviews/Milla Jovovich.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-11-23T15:44:23.000+02:00"
             },
             "Jude Law": {
-                "photoActor": "./images/reviews/Jude Law.jpg",
+                "photoActor": "../images/reviews/Jude Law.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-12-02T14:34:03.000+02:00"
@@ -132,73 +132,73 @@ let moviesPro = {
     },
     "Watchmen": {
         "titleMovie": "Watchmen",
-        "posterMovie": "./images/bgs/watchmen-bg.jpg", 
+        "posterMovie": "../images/bgs/watchmen-bg.jpg", 
         "siteMovie": "https://www.hbo.com/watchmen", 
         "countReviews": 0, //11
         "averageStars": 0, //4
         "statsMovie": {
             "Daniel Radcliffe": {
-                "photoActor": "./images/reviews/Daniel Radcliffe.jpg",
+                "photoActor": "../images/reviews/Daniel Radcliffe.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-11-23T12:14:45.000+02:00"
             },
             "Nicholas Cage": {
-                "photoActor": "./images/reviews/Nicholas Cage.jpg",
+                "photoActor": "../images/reviews/Nicholas Cage.jpg",
                 "ratingActor": 2,
                 "commentActor": "Weak plot.",
                 "dateCommentActor": "2020-12-11T07:12:53.000+02:00"
             },
             "Kate Hudson": {
-                "photoActor": "./images/reviews/Kate Hudson.jpg",
+                "photoActor": "../images/reviews/Kate Hudson.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-12-13T09:10:21.000+02:00"
             },
             "Hugh Jackman": {
-                "photoActor": "./images/reviews/Hugh Jackman.jpg",
+                "photoActor": "../images/reviews/Hugh Jackman.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-10T22:29:11.000+02:00"
             },
             "Milla Jovovich": {
-                "photoActor": "./images/reviews/Milla Jovovich.jpg",
+                "photoActor": "../images/reviews/Milla Jovovich.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-09T14:12:10.000+02:00"
             },
             "Keira Knightley": {
-                "photoActor": "./images/reviews/Keira Knightley.jpg",
+                "photoActor": "../images/reviews/Keira Knightley.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-15T18:04:30.000+02:00"
             },
             "Dwayne Johnson": {
-                "photoActor": "./images/reviews/Dwayne Johnson.jpg",
+                "photoActor": "../images/reviews/Dwayne Johnson.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-19T19:01:00.000+02:00"
             },
             "Julia Roberts": {
-                "photoActor": "./images/reviews/Julia Roberts.jpg",
+                "photoActor": "../images/reviews/Julia Roberts.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-12-20T18:24:35.000+02:00"
             },
             "Adam Sandler": {
-                "photoActor": "./images/reviews/Adam Sandler.jpg",
+                "photoActor": "../images/reviews/Adam Sandler.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-17T19:12:26.000+02:00"
             },
             "Scarlett Johansson": {
-                "photoActor": "./images/reviews/Scarlett Johansson.jpg",
+                "photoActor": "../images/reviews/Scarlett Johansson.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-21T20:13:38.000+02:00"
             },
             "Matthew McConaughey": {
-                "photoActor": "./images/reviews/Matthew McConaughey.jpg",
+                "photoActor": "../images/reviews/Matthew McConaughey.jpg",
                 "ratingActor": 5,
                 "commentActor": "This is a wonderful movie!",
                 "dateCommentActor": "2020-12-22T14:38:03.000+02:00"
@@ -207,31 +207,31 @@ let moviesPro = {
     },
     "The Hobbit - Battle five armies": {
         "titleMovie": "The Hobbit - Battle five armies",
-        "posterMovie": "./images/bgs/hobbit-bg.jpg", 
+        "posterMovie": "../images/bgs/hobbit-bg.jpg", 
         "siteMovie": "https://www.warnerbros.com/movies/hobbit-battle-five-armies", 
         "countReviews": 0, //4
         "averageStars": 0, //2
         "statsMovie": {
             "Daniel Radcliffe": {
-                "photoActor": "./images/reviews/Daniel Radcliffe.jpg",
+                "photoActor": "../images/reviews/Daniel Radcliffe.jpg",
                 "ratingActor": 2,
                 "commentActor": "Weak plot.",
                 "dateCommentActor": "2020-12-22T06:12:42.000+02:00"
             },
             "Kate Hudson": {
-                "photoActor": "./images/reviews/Kate Hudson.jpg",
+                "photoActor": "../images/reviews/Kate Hudson.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-12-23T08:15:22.000+02:00"
             },
             "Hugh Jackman": {
-                "photoActor": "./images/reviews/Hugh Jackman.jpg",
+                "photoActor": "../images/reviews/Hugh Jackman.jpg",
                 "ratingActor": 2,
                 "commentActor": "Weak plot.",
                 "dateCommentActor": "2020-12-24T21:00:14.000+02:00"
             },
             "Brad Pitt": {
-                "photoActor": "./images/reviews/Brad Pitt.jpg",
+                "photoActor": "../images/reviews/Brad Pitt.jpg",
                 "ratingActor": 1,
                 "commentActor": "I did not like it at all :(.",
                 "dateCommentActor": "2020-11-01T09:18:45.000+02:00"
@@ -240,61 +240,61 @@ let moviesPro = {
     },
     "Interstellar": {
         "titleMovie": "Interstellar",
-        "posterMovie": "./images/bgs/interstellar-bg.jpg", 
+        "posterMovie": "../images/bgs/interstellar-bg.jpg", 
         "siteMovie": "https://www.warnerbros.co.uk/movies/interstellar", 
         "countReviews": 0, //9
         "averageStars": 0, //3
         "statsMovie": {
             "Daniel Radcliffe": {
-                "photoActor": "./images/reviews/Daniel Radcliffe.jpg",
+                "photoActor": "../images/reviews/Daniel Radcliffe.jpg",
                 "ratingActor": 1,
                 "commentActor": "The actors play unbelievably. In general - bad.",
                 "dateCommentActor": "2020-12-24T13:32:51.000+02:00"
             },
             "Nicholas Cage": {
-                "photoActor": "./images/reviews/Nicholas Cage.jpg",
+                "photoActor": "../images/reviews/Nicholas Cage.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-12-25T10:14:21.000+02:00"
             },
             "Kate Hudson": {
-                "photoActor": "./images/reviews/Kate Hudson.jpg",
+                "photoActor": "../images/reviews/Kate Hudson.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-12-24T17:15:33.000+02:00"
             },
             "Hugh Jackman": {
-                "photoActor": "./images/reviews/Hugh Jackman.jpg",
+                "photoActor": "../images/reviews/Hugh Jackman.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-12-23T14:29:20.000+02:00"
             },
             "Milla Jovovich": {
-                "photoActor": "./images/reviews/Milla Jovovich.jpg",
+                "photoActor": "../images/reviews/Milla Jovovich.jpg",
                 "ratingActor": 4,
                 "commentActor": "Great movie. Good acting.",
                 "dateCommentActor": "2020-12-25T18:00:10.000+02:00"
             },
             "Dwayne Johnson": {
-                "photoActor": "./images/reviews/Dwayne Johnson.jpg",
+                "photoActor": "../images/reviews/Dwayne Johnson.jpg",
                 "ratingActor": 3,
                 "commentActor": "The plot is cool, but the camera work is not very much.",
                 "dateCommentActor": "2020-12-22T17:52:16.000+02:00"
             },
             "Anne Hathaway": {
-                "photoActor": "./images/reviews/Anne Hathaway.jpg",
+                "photoActor": "../images/reviews/Anne Hathaway.jpg",
                 "ratingActor": 1,
                 "commentActor": "I did not like it at all :(.",
                 "dateCommentActor": "2020-12-12T16:23:11.000+02:00"
             },
             "Tom Cruise": {
-                "photoActor": "./images/reviews/Tom Cruise.jpg",
+                "photoActor": "../images/reviews/Tom Cruise.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-25T19:15:10.000+02:00"
             },
             "Scarlett Johansson": {
-                "photoActor": "./images/reviews/Scarlett Johansson.jpg",
+                "photoActor": "../images/reviews/Scarlett Johansson.jpg",
                 "ratingActor": 5,
                 "commentActor": "This was incredible!",
                 "dateCommentActor": "2020-12-22T13:45:20.000+02:00"
@@ -491,22 +491,22 @@ let moviesPro = {
 }
 
 let allStarsСlubMembers = {
-    "0": ["Daniel Radcliffe", "./images/reviews/Daniel Radcliffe.jpg"],
-    "1": ["Nicholas Cage", "./images/reviews/Nicholas Cage.jpg"],
-    "2": ["Kate Hudson", "./images/reviews/Kate Hudson.jpg"],
-    "3": ["Milla Jovovich", "./images/reviews/Milla Jovovich.jpg"],
-    "4": ["Leonardo DiCaprio", "./images/reviews/Leonardo DiCaprio.jpg"],
-    "5": ["Julia Roberts", "./images/reviews/Julia Roberts.jpg"],
-    "6": ["Adam Sandler", "./images/reviews/Adam Sandler.jpg"],
-    "7": ["Hugh Jackman", "./images/reviews/Hugh Jackman.jpg"],
-    "8": ["Jude Law", "./images/reviews/Jude Law.jpg"],
-    "9": ["Keira Knightley", "./images/reviews/Keira Knightley.jpg"],
-    "10": ["Dwayne Johnson", "./images/reviews/Dwayne Johnson.jpg"],
-    "11": ["Scarlett Johansson", "./images/reviews/Scarlett Johansson.jpg"],
-    "12": ["Matthew McConaughey", "./images/reviews/Matthew McConaughey.jpg"],
-    "13": ["Brad Pitt", "./images/reviews/Brad Pitt.jpg"],
-    "14": ["Anne Hathaway", "./images/reviews/Anne Hathaway.jpg"],
-    "15": ["Tom Cruise", "./images/reviews/Tom Cruise.jpg"],
+    "0": ["Daniel Radcliffe", "../images/reviews/Daniel Radcliffe.jpg"],
+    "1": ["Nicholas Cage", "../images/reviews/Nicholas Cage.jpg"],
+    "2": ["Kate Hudson", "../images/reviews/Kate Hudson.jpg"],
+    "3": ["Milla Jovovich", "../images/reviews/Milla Jovovich.jpg"],
+    "4": ["Leonardo DiCaprio", "../images/reviews/Leonardo DiCaprio.jpg"],
+    "5": ["Julia Roberts", "../images/reviews/Julia Roberts.jpg"],
+    "6": ["Adam Sandler", "../images/reviews/Adam Sandler.jpg"],
+    "7": ["Hugh Jackman", "../images/reviews/Hugh Jackman.jpg"],
+    "8": ["Jude Law", "../images/reviews/Jude Law.jpg"],
+    "9": ["Keira Knightley", "../images/reviews/Keira Knightley.jpg"],
+    "10": ["Dwayne Johnson", "../images/reviews/Dwayne Johnson.jpg"],
+    "11": ["Scarlett Johansson", "../images/reviews/Scarlett Johansson.jpg"],
+    "12": ["Matthew McConaughey", "../images/reviews/Matthew McConaughey.jpg"],
+    "13": ["Brad Pitt", "../images/reviews/Brad Pitt.jpg"],
+    "14": ["Anne Hathaway", "../images/reviews/Anne Hathaway.jpg"],
+    "15": ["Tom Cruise", "../images/reviews/Tom Cruise.jpg"],
     getNumberClubMembers(obj) {
         let countMembersInClub = 0;
         for (member in obj) {
@@ -962,7 +962,7 @@ function getIdCardActor() {
         } else {
             dataMembersClub[numberClubMembersNew.toString()] = [
                 dataForGetIdCard[0],
-                "./images/reviews/noimage.png"
+                "../images/reviews/noimage.png"
             ];
             console.log("ID card issued: OK.");
             toggleHighlightMessage(1, "modal-footer-message-ok", "modal-footer-message-error", `Success! Your card number: ${numberClubMembersNew}. Click Close.`);
@@ -1067,7 +1067,7 @@ function btnAdminLogOut() {
     let sessionClubMembers = sessionStorage.getItem('allStarsСlubMembersSaveSession');
     localStorage.setItem("moviesProSaveStorage", sessionMoviewsPro);
     localStorage.setItem("allStarsСlubMembersSaveStorage", sessionClubMembers);
-    window.location = "./index.html";
+    window.location = "../index.html";
     console.log("The session ended.");  
     console.log("Log out.");    
     showSelectCaseMovie("selectMovie");
