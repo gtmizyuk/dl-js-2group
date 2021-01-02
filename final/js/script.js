@@ -903,8 +903,8 @@ function addCorrectModalGetIdCard() {
 
 function getFieldsByGetIdCard() {
     let formGetIdCard = document.forms["form_get_id_card"];
-    let nameActorForGetIdCard = formGetIdCard.name.value;
-    let linkToPhotoActorForGetIdCard = formGetIdCard.linkToPhoto.value;
+    let nameActorForGetIdCard = formGetIdCard.name.value.trim();
+    let linkToPhotoActorForGetIdCard = formGetIdCard.linkToPhoto.value.trim();
     let linkToPhotoChecked = formGetIdCard.linkToPhotoChecked.checked;
     if (nameActorForGetIdCard) {
         if (!linkToPhotoChecked) {
@@ -1067,7 +1067,7 @@ function btnAdminLogOut() {
     let sessionClubMembers = sessionStorage.getItem('allStarsСlubMembersSaveSession');
     localStorage.setItem("moviesProSaveStorage", sessionMoviewsPro);
     localStorage.setItem("allStarsСlubMembersSaveStorage", sessionClubMembers);
-    window.location = "./index.html";
+    window.location = "../index.html";
     console.log("The session ended.");  
     console.log("Log out.");    
     showSelectCaseMovie("selectMovie");
