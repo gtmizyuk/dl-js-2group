@@ -1046,7 +1046,7 @@ if (btnCloseGetIdCard) {
 /* Admin access */
 
 /* Site directory */
-let pathSiteDirectory = "../dl-js-2group/final/";
+let pathSiteDirectory = "/dl-js-2group/final/";
 let origin = window.location.origin;
 console.log(origin);
 
