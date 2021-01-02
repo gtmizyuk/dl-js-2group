@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Stars Reviews / Admin Panel</title>
+    <link rel="icon" href="../images/logo-star.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/fonts/googlefonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+         let todayCurrent = new Date();
+         let yyyy = todayCurrent.getFullYear();
+    </script>
+    <script src="../js/luxon.min.js"></script>
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <h3 class="admin-logo">Admin Panel <span>Movie Stars <i>Reviews</i></span></h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
+                    <a id="log-out" class="btn btn-outline-warning log-out" type="button" href="#">Log out</a>
+                </div>
+            </div>
+        </nav>
+   
+    </header>
+    <main class="admin-main">
+        <section>
+            <div class="container admin-statistics">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Main statistics</h3>
+                        <table class="table table-hover table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Count movies</td>
+                                    <td class="count-movies"></td>
+                                </tr>
+                                <tr>
+                                    <td>Count members club</td>
+                                    <td class="count-members-club"></td>
+                                </tr>
+                                <tr>
+                                    <td>Total reviews</td>
+                                    <td class="total-reviews"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Last review</h3>
+                        <table class="table table-hover table-striped table-bordered table-last-review">
+                            <tbody>
+                                <tr>
+                                    <td>Actor</td>
+                                    <td class="last-review-name-actor"></td>
+                                </tr>
+                                <tr>
+                                    <td>Photo</td>
+                                    <td class="last-review-photo-actor">
+                                        <img src="#" title="#" width="30%" alt="#">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Movie</td>
+                                    <td class="last-review-title-movie"></td>
+                                </tr>
+                                <tr>
+                                    <td>Site</td>
+                                    <td class="last-review-movie-official-site"></td>
+                                </tr>
+                                <tr>
+                                    <td>Stars</td>
+                                    <td class="last-review-count-stars"></td>
+                                </tr>
+                                <tr>
+                                    <td>Review</td>
+                                    <td class="last-review-comment"></td>
+                                </tr>
+                                <tr>
+                                    <td>Date</td>
+                                    <td class="last-review-comment-date"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row col-md-12">
+                <h3>Actions</h3>
+            </div>
+        </div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form name="form_add_movie" id="form_add_movie" class="border px-3 py-2 mt-2 actions">
+                            <fieldset>
+                                <legend>Add new movie</legend>    
+                                <div class="form-group mb-1"> 
+                                    <label class="fs-5" for="titleMovieNew">Movie title</label> <!-- class="sr-only" -->
+                                    <input type="text" class="form-control mt-1" id="titleMovieNew" name="titleMovieNew" aria-describedby="titleMovieNewHelp">
+                                    <small id="titleMovieNewHelp" class="form-text text-muted">For example, District 9, Terminator: Dark Fate etc.</small>
+                                </div>
+                                <div class="form-group"> 
+                                    <label class="fs-5" for="posterMovieNew">Link to movie poster</label> <!-- class="sr-only" -->
+                                    <button type="button" id="buttonDisplayImageFromLink" class="btn btn-outline-info">Display image</button>
+                                    <input type="text" class="form-control mt-1" id="posterMovieNew" name="posterMovieNew" aria-describedby="posterMovieNewHelp">
+                                    <small id="posterMovieNewHelp" class="form-text text-muted">For example, https://bit.ly/34MGq2m, https://bit.ly/3nTS2YU etc.</small>
+                                    <div class="mb-1">
+                                        <label class="fs-5 mb-1" for="posterMovieNewUploadFile">Or upload from file</label> <!-- class="sr-only" -->
+                                        <input class="form-control mt-1" type="file" id="posterMovieNewUploadFile" accept="image/jpeg, image/png">
+                                        <div id="posterMovieHere"></div>    
+                                    </div>         
+                                </div>
+                                <div class="form-group"> 
+                                    <label class="fs-5" for="siteMovieNew">Official site movie</label> <!-- class="sr-only" -->
+                                    <input type="text" class="form-control mt-1" id="siteMovieNew" name="siteMovieNew" aria-describedby="siteMovieNewHelp">
+                                    <small id="siteMovieNewHelp" class="form-text text-muted">For example, https://www.sonypictures.com/movies/district9, https://www.paramount.com etc.</small>
+                                </div>
+                                <div class="button-add-movie-new mt-2">
+                                    <button type="button" id="buttonAddMovieNew" class="btn btn-outline-success">Add new movie</button>
+                                    <small class="toggle-highlight-message form-text align-middle"></small>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div> 
+                    <div class="col-md-6">
+                        <form name="form_remove_actor_review_for_movie" id="form_remove_actor_review_for_movie" class="border px-3 py-2 mt-2 actions">
+                            <fieldset>
+                                <legend>Remove actor review</legend>    
+                                <div class="form-group mb-1"> 
+                                    <label class="fs-5" for="titlesMoviesRemoveReview">Select movie</label> <!-- class="sr-only" -->
+                                    <select id="titlesMoviesRemoveReview" name="titlesMoviesRemoveReview" class="form-select form-select-sm mt-1">
+                                        <!-- dynamic create choose movie for remove actor review for current movie --> 
+                                    </select>
+                                </div>
+                                <div class="form-group"> 
+                                    <label class="fs-5" for="actorsRemoveReview">Select actor</label> <!-- class="sr-only" -->
+                                    <select id="actorsRemoveReview" name="actorsRemoveReview" class="form-select form-select-sm mt-1">
+                                        <!-- dynamic create choose movie for remove actor review for current movie --> 
+                                    </select>
+                                </div>
+                                <div class="button-remove-actor-review-for-movie mt-2">
+                                    <button type="button" id="buttonRemoveActorReview" class="btn btn-outline-success">Remove review</button>
+                                    <small class="toggle-highlight-message form-text align-middle"></small>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>       
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form name="form_remove_movie" id="form_remove_movie" class="border px-3 py-2 mt-2 actions">
+                            <fieldset>
+                                <legend>Remove movie</legend>    
+                                <div class="form-group mb-1">
+                                    <label class="fs-5" for="titleMovieForRemove">Select movie</label> <!-- class="sr-only" -->
+                                    <select id="titleMovieForRemove" name="titleMovieForRemove" class="form-select form-select-sm mt-1">
+                                        <!-- dynamic create choose movie for remove --> 
+                                    </select>
+                                </div>
+                                <div class="button-remove-movie mt-2">
+                                    <button type="button" id="buttonRemoveMovie" class="btn btn-outline-success">Remove movie</button>
+                                    <small class="toggle-highlight-message form-text align-middle"></small>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form name="form_remove_club_member" id="form_remove_club_member" class="border px-3 py-2 mt-2 actions">
+                            <fieldset>
+                                <legend>Remove club member</legend>    
+                                <div class="form-group mb-1"> 
+                                    <label class="fs-5" for="idCardMemberClubForRemove">ID Cards</label> <!-- class="sr-only" -->
+                                    <select id="idCardsMembersClubForRemove" name="idCardsMembersClubForRemove" class="form-select form-select-sm mt-2">
+                                        <!-- dynamic create choose ID Cards for remove --> 
+                                    </select>
+                                    <div class="remove-all-reviews-idcard-checked">
+                                        <input class="form-check-input mt-2" type="checkbox" value="removeAllReviews" id="removeAllReviewsIdCardChecked" name="removeAllReviewsIdCardChecked">
+                                        <label class="form-check-label" for="removeAllReviewsIdCardChecked">
+                                            <small class="form-text text-muted">Delete all reviews at once</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="button-remove-club-member mt-2">
+                                    <button type="button" id="buttonRemoveClubMember" class="btn btn-outline-success">Remove member club</button>
+                                    <small class="toggle-highlight-message form-text align-middle"></small>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container-fluid footer-in footer-admin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <span class="footer-text">&copy; <script>document.write(yyyy);</script> Movie Stars <i>reviews</i></span>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <ul class="nav justify-content-end social-icons">
+                        <li class="nav-item">
+                            <a href="#" title=""></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="Our Instagram page"><i class="fab fa-instagram fa-2x"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" title="Our Facebook page"><i class="fab fa-facebook fa-2x ms-2 ps-2"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://gtmizyuk.github.io/dl-js-2group/final/movie-stars-reviews/" target="_blank" title="Project on GitHub"><i class="fab fa-github fa-2x ms-2 ps-2"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

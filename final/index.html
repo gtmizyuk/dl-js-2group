@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Stars Reviews</title>
+    <link rel="icon" href="./images/logo-star.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/fonts/googlefonts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script>
+         let todayCurrent = new Date();
+         let yyyy = todayCurrent.getFullYear();
+    </script>
+     <script src="./js/luxon.min.js"></script>
+</head>
+<body id="bg" class="bg-change"> 
+        <div class="bg-change-wrapper">
+            <header>
+                <div class="container-fluid text-center">
+                    <div class="row">
+                        <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm p-3 mb-5 bg-white fixed-top">
+                            <div class="container">
+                                <a class="navbar-brand fs-3" href="#">
+                                    <h3 class="logo">Movie Stars<span class="badge bg-danger align-top ms-1 text-uppercase">reviews</span></h3>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
+                                    <ul class="navbar-nav mb-2 mb-sm-0 me-2">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#">Reviews</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a id="add-review" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#addReviewModal">Add review</a></span>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a id="get-id-card" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#getIdCardModal">Get IDcard</a></span>
+                                        </li>
+                                    </ul>
+                                    <a id="sign-in" class="btn btn-outline-success" type="button" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h1 id="title-movie" class="fs-1 title-movie">The Mandalorian</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="select-movie-header">Select movie</h2>
+                            <form name="selectMovie">
+                                <div class="container mb-3 select-movie-form">
+                                    <select id="selectMovie" class="form-select form-select-lg mb-3">
+                                        <!-- dynamic create choose movie --> 
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <a id="buttonAboutMovie" href="https://www.starwars.com/series/the-mandalorian" type="button" target="_blank" class="btn btn-outline-warning btn-lg button-info-movie">About this movie</a>
+                        </div>
+                    </div>
+                <div>
+            </header>
+            <main>
+                <section>
+                    <div class="container-fluid text-center average-rating-stars">
+                        <h3 class="average-rating-stars-header">Average rating</h3>
+                        <div class="row">
+                            <div id="stars" class="col stars">
+                                <span><i class="fas fa-star stars-average"></i></span>
+                                <span><i class="fas fa-star stars-average"></i></span>
+                                <span><i class="fas fa-star stars-average"></i></span>
+                                <span><i class="fas fa-star stars-average"></i></span>
+                                <span><i class="fas fa-star stars-average"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid text-center some-comments">
+                        <h3 class="some-comments-header">Stars reviews</h3>
+                        <div class="container text-start">
+                            <div id="cards-show" class="row row-cols-md-5 g-4 cards-comments">
+                            <!-- dynamic create cards -->     
+                            </div>
+                        </div>
+                    </div>    
+                </section>
+            </main>
+        </div>
+        <footer class="container-fluid footer-in">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <span class="footer-text">&copy; <script>document.write(yyyy);</script> Movie Stars <i>reviews</i></span>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <ul class="nav justify-content-end social-icons">
+                            <li class="nav-item">
+                                <a href="#" title="Our Instagram page"><i class="fab fa-instagram fa-2x"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Our Facebook page"><i class="fab fa-facebook fa-2x ms-2 ps-2"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://gtmizyuk.github.io/dl-js-2group/final/movie-stars-reviews/" target="_blank" title="Project on GitHub"><i class="fab fa-github fa-2x ms-2 ps-2"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    <!-- Beginning hidden modal Add review -->
+    <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-2 header-text-form" id="addReviewModalLabel">Add review</h5>
+                <button type="button" class="btn-close close-button-in-form" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="form_add_review" id="form_add_review">
+                    <div class="form-group"> 
+                        <label class="fs-5" for="idCardClub">Your "All Stars" club member card</label> <!-- class="sr-only" -->
+                        <input type="text" class="form-control" id="idCardClub" name="idCardClub" aria-describedby="idCardClubHelp" placeholder="Enter the club card number">
+                        <small id="idCardClubHelp" class="form-text text-muted">For example, 12.</small>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="fs-5" for="selectMovieAddReview">Select movie</label> <!-- class="sr-only" -->
+                        <select id="selectMovieAddReview" name="selectMovieAddReview" class="form-select form-select-sm mb-3">
+                            <!-- dynamic create choose movie --> 
+                        </select>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="fs-5" for="fieldReview">Your review</label> <!-- class="sr-only" -->
+                        <textarea class="form-control" id="fieldReview" name="fieldReview" aria-describedby="fieldReviewHelp" placeholder="Leave your review here"></textarea>
+                        <small id="fieldReviewtHelp" class="form-text text-muted">For example, "Great movie" (without quotes).</small>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="fs-5 mb-1" for="numberStars" aria-describedby="numberStarsHelp">Number of stars</label> <!-- class="sr-only" -->
+                        <div id="numberRadioStars" class="number-stars-form">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberStars" id="numberStars1" value="1">
+                                <label class="form-check-label" for="numberStars1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberStars" id="numberStars2" value="2">
+                                <label class="form-check-label" for="numberStars2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberStars" id="numberStars3" value="3">
+                                <label class="form-check-label" for="numberStars3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberStars" id="numberStars4" value="4">
+                                <label class="form-check-label" for="numberStars4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="numberStars" id="numberStars5" value="5">
+                                <label class="form-check-label" for="numberStars5">5</label>
+                            </div>
+                        </div>
+                        <small id="numberStarsHelp" class="form-text text-muted">Indicate the number of stars you put in the movie.</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <small class="toggle-highlight-message form-text"></small>
+                <button type="button" id="buttonCloseAddReview" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="buttonAddReview" class="btn btn-outline-danger">Add review</button>
+            </div>
+        </div>
+        </div>
+    </div>   
+    <!-- End hidden modal Add review -->
+    <!-- Beginning hidden modal Get IDcard -->
+    <div class="modal fade" id="getIdCardModal" tabindex="-1" aria-labelledby="getIdCardModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-2 header-text-form" id="getIdCardModalLabel">Get IDcard</h5>
+                <button type="button" class="btn-close close-button-in-form" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="form_get_id_card" id="form_get_id_card">
+                    <div class="form-group"> 
+                        <label class="fs-5" for="name">Your name</label> <!-- class="sr-only" -->
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your name">
+                        <small id="nameHelp" class="form-text text-muted">For example, Christian Bale, Ethan Hawke, Rachel Weisz etc.</small>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="fs-5" for="linkToPhoto">Link to your photo</label> <!-- class="sr-only" -->
+                        <div class="link-photo-checked">
+                            <input class="form-check-input" type="checkbox" value="I do not have a link to my own photo" id="linkToPhotoChecked" name="linkToPhotoChecked" checked="checked">
+                            <label class="form-check-label" for="linkToPhotoChecked">
+                                <small class="form-text text-muted">I do not have a link to my own photo</small>
+                            </label>
+                        </div>
+                        <input type="text" class="form-control" id="linkToPhoto" name="linkToPhoto" aria-describedby="linkToPhotoHelp" placeholder="Insert link here">
+                        <small id="linkToPhotoHelp" class="form-text text-muted">For example,<br>https://kino-teatr.ua/public/main/persons/2019-11/x4_photo_5dc53a968c764.jpg,<br>https://kino-teatr.ua/public/main/persons/2020-10/x4_photo_5f75bab3cf00c.jpg,<br>https://kino-teatr.ua/public/main/persons/x2_photo_28277.jpg etc.</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <small class="toggle-highlight-message form-text"></small>
+                <button type="button" id="buttonCloseGetIdCard" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="buttonGetIdCard" class="btn btn-outline-danger">Get IDcard</button>
+            </div>
+        </div>
+        </div>
+    </div>   
+    <!-- End hidden modal Get IDcard -->
+    <!-- Beginning hidden modal Log In -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-2 header-text-form" id="signInModal">Log in</h5>
+                <button type="button" class="btn-close close-button-in-form" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="form_sign_in" id="form_sign_in">
+                    <div class="form-group"> 
+                        <label class="fs-5" for="password">Enter password</label> <!-- class="sr-only" -->
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+            <div class="modal-footer">
+                <small class="toggle-highlight-message form-text"></small>
+                <button type="button" id="buttonCloseLogIn" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="buttonLogIn" class="btn btn-outline-danger" href="./admin/index.html">Log In</button>
+            </div>
+        </div>
+        </div>
+    </div>   
+    <!-- End hidden modal Log In -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
