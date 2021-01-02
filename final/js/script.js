@@ -1099,7 +1099,7 @@ function btnAdminSignIn() {
         sessionStorage.setItem('moviesProSaveSession', JSON.stringify(dataMovies));
         sessionStorage.setItem('allStarsСlubMembersSaveSession', JSON.stringify(dataMembersClub));
         console.log("Logged in as administrator.");
-        window.location = "./admin/index.html";
+        window.location.pathname = "./admin/index.html";
     }  
 }
 
@@ -1143,7 +1143,11 @@ function staticticsLastReview(dataMovies) {
         document.querySelector(".last-review-name-actor").innerText = lastReviewNameActor;
         
         let lastReviewPhotoActor = arrayLastReview[1];
-        document.querySelector(".last-review-photo-actor img").src = "." + lastReviewPhotoActor;
+        if (lastReviewPhotoActor.startsWith('http')) {
+            document.querySelector(".last-review-photo-actor img").src = lastReviewPhotoActor;    
+        } else {
+            document.querySelector(".last-review-photo-actor img").src = "." + lastReviewPhotoActor;
+        }
         document.querySelector(".last-review-photo-actor img").title = lastReviewNameActor;
         document.querySelector(".last-review-photo-actor img").alt = lastReviewNameActor;
     
