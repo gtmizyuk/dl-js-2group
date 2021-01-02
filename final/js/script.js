@@ -1044,6 +1044,10 @@ if (btnCloseGetIdCard) {
 }
 
 /* Admin access */
+
+/* Site directory */
+let pathSiteDirectory = "../dl-js-2group/final/";
+
 let btnCloseSignIn = document.querySelector("#buttonCloseLogIn"); 
 if (btnCloseSignIn) {
     btnCloseSignIn.addEventListener("click", btnCloseForClearFormSignIn); 
@@ -1067,7 +1071,7 @@ function btnAdminLogOut() {
     let sessionClubMembers = sessionStorage.getItem('allStarsСlubMembersSaveSession');
     localStorage.setItem("moviesProSaveStorage", sessionMoviewsPro);
     localStorage.setItem("allStarsСlubMembersSaveStorage", sessionClubMembers);
-    window.location.pathname = "../dl-js-2group/final/index.html";
+    window.location.pathname = pathSiteDirectory + "index.html";
     console.log("The session ended.");  
     console.log("Log out.");    
     showSelectCaseMovie("selectMovie");
@@ -1099,7 +1103,7 @@ function btnAdminSignIn() {
         sessionStorage.setItem('moviesProSaveSession', JSON.stringify(dataMovies));
         sessionStorage.setItem('allStarsСlubMembersSaveSession', JSON.stringify(dataMembersClub));
         console.log("Logged in as administrator.");
-        window.location.pathname = "./admin/index.html";
+        window.location.pathname = pathSiteDirectory + "admin/index.html";
     }  
 }
 
