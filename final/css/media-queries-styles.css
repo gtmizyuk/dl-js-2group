@@ -25,7 +25,6 @@
     .admin-add-new-movie label {
         font-size: 1.15rem !important;
     }
-    
 }
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { 
@@ -53,6 +52,12 @@
     .some-comments {    
         padding-top: 15px;
         padding-bottom: 15px;
+    }
+    h5.card-title {
+        font-size: 1.15rem;
+    }
+    .stars-review-wrapper span {
+        font-size: 0.9rem;
     }
     .cards-comments {
         margin-top: 1rem;
@@ -97,5 +102,20 @@
     }
     .admin-statistics {
         margin-top: 85px;
+    }
+}
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    h5.card-title {
+        font-size: 1.05rem;
+    }
+    .stars-review-wrapper span {
+        font-size: 0.8rem;
+    }
+    .card-text {
+        font-size: 0.9rem;
+    }
+    .text-muted {
+        font-size: 0.8rem;
     }
 }
