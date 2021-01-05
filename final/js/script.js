@@ -1038,9 +1038,14 @@ function clearFormByCloseButtons(){
 }
 
 let closeButtonsArray = document.querySelectorAll(".close-button-in-form");
+for (let i = 0; i < closeButtonsArray.length; i++) {
+    closeButtonsArray[i].addEventListener("click", clearFormByCloseButtons);
+}
+/*
 closeButtonsArray.forEach(function(element) {
     element.addEventListener("click", clearFormByCloseButtons);
 });  
+*/
 
 let selectCurentMovie = document.querySelector("#selectMovie");
 if (selectCurentMovie) {
@@ -1336,9 +1341,10 @@ function addNewMovie() {
         
         let dmSession = JSON.parse(sessionStorage["moviesProSaveSession"]);
         if (!dmSession[arrayAddNewMovie[0]]) {
-            dmSession = {...dmSession,
+            /*dmSession = {...dmSession,
                 ...newMovie
-            }
+            }*/
+            dmSession = Object.assign({}, dmSession, newMovie);
             sessionStorage.setItem('moviesProSaveSession', JSON.stringify(dmSession));
 
             toggleHighlightMessage(0, "modal-footer-message-ok", "modal-footer-message-error", "Successfully! Refresh the page."); 
