@@ -569,6 +569,13 @@ function isLocalStorageByKey(key) {
     return false
 }
 
+function isSessionStorageByKey(key) {
+    if (sessionStorage.getItem(key)) {
+        return true
+    }    
+    return false
+}
+
 function isCorrectStorage() {
     if (isLocalStorageByKey("moviesProSaveStorage") && isLocalStorageByKey("allStarsСlubMembersSaveStorage")) {
         return true
@@ -1123,7 +1130,7 @@ function btnAdminLogOut() {
     let sessionClubMembers = JSON.parse(sessionStorage["allStarsСlubMembersSaveSession"]);
     localStorage.setItem("moviesProSaveStorage", JSON.stringify(sessionMoviewsPro));
     localStorage.setItem("allStarsСlubMembersSaveStorage", JSON.stringify(sessionClubMembers));
-    window.location = origin + pathSiteDirectory + "index.html";
+    window.location = origin + pathSiteDirectory;
     console.log("The session ended.");  
     console.log("Log out.");    
     showSelectCaseMovie("selectMovie");
@@ -1152,8 +1159,8 @@ function btnAdminSignIn() {
         console.log("Session start...");
         sessionStorage.setItem('moviesProSaveSession', JSON.stringify(dataMovies));
         sessionStorage.setItem('allStarsСlubMembersSaveSession', JSON.stringify(dataMembersClub));
+        window.location = origin + pathSiteDirectory + "admin/";
         console.log("Logged in as administrator.");
-        window.location = origin + pathSiteDirectory + "admin/index.html";
     }  
 }
 
@@ -1230,7 +1237,6 @@ function staticticsLastReview(dMovies) {
         document.querySelector(".table-last-review").innerText = "The last review is missing.";
         console.log("Last review statictics: FAIL, the last review is missing.");
     }
-    
 }
 
 /* Add new movie */
@@ -1556,39 +1562,41 @@ function initiative() {
     if (sm) {
         startMovieScreen();
     } else {
-        console.log("Admin Panel active.");
-
+        let okSession = isSessionStorageByKey("moviesProSaveSession") && isSessionStorageByKey("allStarsСlubMembersSaveSession");
         if (isCorrectStorage()) {
-            
-            console.log("+++++++++++++++++++ ADMIN PANEL +++++++++++++++++++");
-            let dataMoviesSession = JSON.parse(sessionStorage["moviesProSaveSession"]);
-            let dataMembersClubSession = JSON.parse(sessionStorage["allStarsСlubMembersSaveSession"]);
-            
-            staticticsMain(dataMoviesSession, dataMembersClubSession);
-            staticticsLastReview(dataMoviesSession);
-            
-            uploadImage();
+            if (okSession) {
+                console.log("Admin Panel active.");
+                console.log("+++++++++++++++++++ ADMIN PANEL +++++++++++++++++++");
+                let dataMoviesSession = JSON.parse(sessionStorage["moviesProSaveSession"]);
+                let dataMembersClubSession = JSON.parse(sessionStorage["allStarsСlubMembersSaveSession"]);
+                
+                staticticsMain(dataMoviesSession, dataMembersClubSession);
+                staticticsLastReview(dataMoviesSession);
+                
+                uploadImage();
 
-            showMoviesForRemoveMovie(dataMoviesSession);
-            showIdCards(dataMembersClubSession);
-            
-            showMoviesForRemoveActorReviewForCurrentMovie(dataMoviesSession);
-      
-            let btnAddNewMovie = document.querySelector("#buttonAddMovieNew"); 
-            btnAddNewMovie.addEventListener("click", addNewMovie); 
+                showMoviesForRemoveMovie(dataMoviesSession);
+                showIdCards(dataMembersClubSession);
+                
+                showMoviesForRemoveActorReviewForCurrentMovie(dataMoviesSession);
+        
+                let btnAddNewMovie = document.querySelector("#buttonAddMovieNew"); 
+                btnAddNewMovie.addEventListener("click", addNewMovie); 
 
-            let btnRemoveMovie = document.querySelector("#buttonRemoveMovie"); 
-            btnRemoveMovie.addEventListener("click", removeMovie); 
+                let btnRemoveMovie = document.querySelector("#buttonRemoveMovie"); 
+                btnRemoveMovie.addEventListener("click", removeMovie); 
 
-            let btnRemoveClubMember = document.querySelector("#buttonRemoveClubMember"); 
-            btnRemoveClubMember.addEventListener("click", removeClubMember); 
-            
-            let selectShowActorsForCurrentMovie = document.querySelector("#titlesMoviesRemoveReview"); 
-            selectShowActorsForCurrentMovie.addEventListener("change", showActors); 
+                let btnRemoveClubMember = document.querySelector("#buttonRemoveClubMember"); 
+                btnRemoveClubMember.addEventListener("click", removeClubMember); 
+                
+                let selectShowActorsForCurrentMovie = document.querySelector("#titlesMoviesRemoveReview"); 
+                selectShowActorsForCurrentMovie.addEventListener("change", showActors); 
 
-            let btnRemoveActorReviewForCurrentMovie = document.querySelector("#buttonRemoveActorReview"); 
-            btnRemoveActorReviewForCurrentMovie.addEventListener("click", removeActorReviewForCurrentMovie); 
-
+                let btnRemoveActorReviewForCurrentMovie = document.querySelector("#buttonRemoveActorReview"); 
+                btnRemoveActorReviewForCurrentMovie.addEventListener("click", removeActorReviewForCurrentMovie); 
+            } else {
+                window.location = origin + pathSiteDirectory;
+            }     
         } else {
             console.log("There is no such storage.");
         }
