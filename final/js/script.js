@@ -414,16 +414,18 @@ let moviesPro = {
         }
         return [arrayDates, arrayDatesISO]
     },
-    sortReviewsBytDate: function(obj) {
+    sortReviewsByDate: function(obj) {
         let arrayDates = this.getDatesAllReviews(obj);
         let arraySortedDatesISO = arrayDates[1];
         arraySortedDatesISO.sort(function(a, b) {
             return (a < b) ? -1 : ((a > b) ? 1 : 0);
         });
-        return arraySortedDatesISO[arraySortedDatesISO.length - 1]
+        let resultSortedDates = arraySortedDatesISO.reverse();
+        //return arraySortedDatesISO[arraySortedDatesISO.length - 1]
+        return resultSortedDates[0]
     },
     getLastReviewStatistics: function(obj) {
-        let lastDateISO = this.sortReviewsBytDate(obj);
+        let lastDateISO = this.sortReviewsByDate(obj);
         let arrayLastReviewStatistics = [];
         let lastReviewDateCommentActor = lastDateISO;
         let allMoviesNames = Object.getOwnPropertyNames(obj).filter(property => typeof obj[property] !== 'function');
@@ -541,6 +543,16 @@ let allStarsСlubMembers = {
 let dataMovies;
 let dataMembersClub; 
 
+/* Settings */
+/* Site directory on GitHub Pages */
+let pathSiteDirectory = "/dl-js-2group/final/";
+
+/* Site directory on local webserver*/
+// let pathSiteDirectory = "/";
+
+/* Site directory on hosting */
+// let pathSiteDirectory = "/stars/";
+
 function supportLocalStorage() {
     if (typeof(Storage) !== 'undefined') {
         return true
@@ -550,11 +562,12 @@ function supportLocalStorage() {
 
 function initLocalStorage() {
     if (supportLocalStorage()) {
+        
         localStorage.setItem("moviesProSaveStorage", JSON.stringify(moviesPro));
         localStorage.setItem("allStarsСlubMembersSaveStorage", JSON.stringify(allStarsСlubMembers));   
         dataMovies = JSON.parse(localStorage["moviesProSaveStorage"]);
         dataMembersClub = JSON.parse(localStorage["allStarsСlubMembersSaveStorage"]); 
-        moviesPro.setEntries(dataMovies);
+        moviesPro.setEntries(dataMovies);  
         localStorage.setItem("moviesProSaveStorage", JSON.stringify(dataMovies));
         
     } else {
@@ -708,11 +721,26 @@ function selectActorStarsForMovieScreen(cardItem, cStars) {
     }
 }
 
+function sortCards(cards, order) {
+        // order sort: 0 (a-z) or 1 (z-a)   
+        if (order == 0) {
+            cards.sort(function(a, b) {
+                return (a[5].split(", ")[1] < b[5].split(", ")[1]) ? -1 : ((a[5].split(", ")[1] > b[5].split(", ")[1]) ? 1 : 0);
+            });
+        } else {
+            cards.sort(function(a, b) {
+                return (a[5].split(", ")[1] > b[5].split(", ")[1]) ? -1 : ((a[5].split(", ")[1] < b[5].split(", ")[1]) ? 1 : 0);
+            });
+        }        
+       return cards
+}
+
 function showCardActorReview(movieValue) {   
     let currentCard = document.querySelector("#cards-show");
     currentCard.innerHTML = "";
     let cardsShow = createCardActorReview(movieValue);
     if (cardsShow.length > 0) {
+        cardsShow = sortCards(cardsShow, 1); // order sort: 0 (a-z) or 1 (z-a)
         for (let i = 0; i < cardsShow.length; i++) {
             //console.log(i, cardsShow[i][0], cardsShow[i][1], cardsShow[i][2], cardsShow[i][3], cardsShow[i][4], cardsShow[i][5]); //card, actor, photo, movie, rating, comment, date 
             let htmlCard = createHtmlCard(i, cardsShow[i][0], cardsShow[i][1], cardsShow[i][4], cardsShow[i][5]); //card, actor, photo, comment, date 
@@ -726,7 +754,6 @@ function showCardActorReview(movieValue) {
         currentCard.classList.add("no-reviews");
         console.log("No reviews.");
     }
-    
 }
 
 function selectedMovieScreen() {
@@ -834,8 +861,9 @@ function updateReviewActorInMoviesPro(idCard, movie, actor, starNew, commentNew,
         
         addAverageStarsMovieScreen(dataMovies, movie);
         moviesPro.setEntries(dataMovies);
-        showSelectCaseMovie("selectMovie");
 
+        showSelectCaseMovie("selectMovie");
+        
         localStorage.setItem("moviesProSaveStorage", JSON.stringify(dataMovies));
 
         console.log("Update card.");
@@ -1095,16 +1123,6 @@ if (btnCloseGetIdCard) {
 }
 
 /* Admin access */
-
-/* Site directory on GitHub Pages */
-let pathSiteDirectory = "/dl-js-2group/final/";
-
-/* Site directory on local webserver*/
-// let pathSiteDirectory = "/";
-
-/* Site directory on hosting */
-// let pathSiteDirectory = "/stars/";
-
 let origin = window.location.origin;
 
 let btnCloseSignIn = document.querySelector("#buttonCloseLogIn"); 
