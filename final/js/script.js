@@ -1283,18 +1283,18 @@ function displayImageFromLink() {
     let link = document.querySelector("#posterMovieNew").value;
     if (link) {
         let isValidateLinkToImage = imageCreateFromLink(link);
- 
         if (isValidateLinkToImage) {
-            toggleHighlightMessage(0, "modal-footer-message-ok", "modal-footer-message-error", "The link to the image is correct."); 
-            console.log("The linked image has been displayed.");
+            toggleHighlightMessage(0, "modal-footer-message-ok", "modal-footer-message-error", "If you don't see the image, check the link."); 
+            console.log("The linked image has been displayed. If you don't see the image, check the link.");
             let displayImage = document.querySelector("#posterMovieHere");
             displayImage.addEventListener("click", () => {
                 displayImage.innerHTML = "";
+                toggleHighlightMessage(0, "modal-footer-message-ok", "modal-footer-message-error", "The image at the link has been deleted.");
                 console.log("The image at the link has been deleted.");
             })
         } else {
             toggleHighlightMessage(0, "modal-footer-message-error", "modal-footer-message-ok", "Link is invalid!"); 
-            console.log("Link is invalid!");
+            console.log("No link!");
         }
     } 
 }
