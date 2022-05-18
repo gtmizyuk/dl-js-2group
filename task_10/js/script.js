@@ -148,7 +148,7 @@ function showDistanceToGold(distance) {
     return messageDistance
 }
 
-function toСhooseBox(e) {
+function toChooseBox(e) {
 
     let spanDistance = document.querySelector(".wrapper-rules span.distance");
     if (spanDistance) {
@@ -266,7 +266,7 @@ function startGame() {
 
     let boxesArray = document.querySelectorAll(".box");
     boxesArray.forEach(function(element) {
-        element.addEventListener("click", toСhooseBox);
+        element.addEventListener("click", toChooseBox);
     });  
 }
 
